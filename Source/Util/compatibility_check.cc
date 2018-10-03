@@ -24,12 +24,12 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../Headers/compatibility_check.h"
-#include "../Headers/Testing/claim.h"
-#include "../Headers/Models/dmfb_arch.h"
-#include "../Headers/Placer/placer.h"
-#include "../Headers/Scheduler/scheduler.h"
-#include "../Headers/Router/router.h"
+#include "Util/compatibility_check.h"
+#include "Util/claim.h"
+#include "Models/dmfb_arch.h"
+#include "Placer/placer.h"
+#include "Scheduler/scheduler.h"
+#include "Router/router.h"
 #include <set>
 #include <string>
 

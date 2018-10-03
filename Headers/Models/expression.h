@@ -30,7 +30,7 @@
 
 #include "assay_node.h"
 #include "../Resources/enums.h"
-#include "../Testing/claim.h"
+#include "Util/claim.h"
 #include "dag.h"
 #include "entity.h"
 

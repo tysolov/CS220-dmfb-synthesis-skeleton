@@ -28,7 +28,7 @@
 #define _CONDITIONAL_GROUP_H
 
 #include "../Resources/enums.h"
-#include "../Testing/claim.h"
+#include "Util/claim.h"
 #include "../Resources/structs.h"
 #include "../Util/sort.h"
 #include "../Resources/structs.h"

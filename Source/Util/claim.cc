@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Testing/claim.h"
-#include "../../Headers/Resources/enums.h"
+#include "Util/claim.h"
+#include "Resources/enums.h"
 
 //////////////////////////////////////////////////////////////////
 // Exits program and prints error if assertion is not true

@@ -28,7 +28,7 @@
 #define DIAGONAL_WIRE_ROUTING_MODEL_H_
 
 #include "../Resources/structs.h"
-#include "../Testing/claim.h"
+#include "Util/claim.h"
 #include "dmfb_arch.h"
 #include <vector>
 #include <limits>

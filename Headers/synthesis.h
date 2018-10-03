@@ -22,8 +22,8 @@
 #ifndef _SYNTHESIS_H
 #define _SYNTHESIS_H
 
-#include "Testing/elapsed_timer.h"
-#include "compatibility_check.h"
+#include "Util/elapsed_timer.h"
+#include "Util/compatibility_check.h"
 #include "Models/dmfb_arch.h"
 #include "Resources/enums.h"
 #include "Models/dag.h"

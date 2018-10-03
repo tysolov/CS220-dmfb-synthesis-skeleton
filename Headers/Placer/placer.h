@@ -27,7 +27,7 @@
 #define PLACER_H_
 
 #include "../Models/dmfb_arch.h"
-#include "../Testing/claim.h"
+#include "Util/claim.h"
 #include <unordered_set>
 #include <unordered_map>
 #include "../Models/operation_coalescing_pool.h"

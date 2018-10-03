@@ -27,7 +27,7 @@
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
 #include "../../Headers/Models/min_cost_max_flow_graph.h"
-#include "../../Headers/Testing/claim.h"
+#include "Util/claim.h"
 #include <fstream>
 
 

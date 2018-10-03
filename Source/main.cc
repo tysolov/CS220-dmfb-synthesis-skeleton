@@ -35,7 +35,7 @@
 
 #include "../Headers/synthesis.h"
 #include "../Headers/Resources/enums.h"
-#include "../Headers/compatibility_check.h"
+#include "Util/compatibility_check.h"
 #include <math.h>
 #include <stdio.h>
 #include <dirent.h>
@@ -68,7 +68,7 @@ int main(int argc, char **argv)
 	ProcessEngineType pet = pt == GRISSOM_LE_B ? FIXED_PE : FREE_PE;
 
 	// Provide the input files for testing
-	string name = "ProbabilisticPCR";
+	string name = "PCR";
 	string path = "Assays/CFGs/" + name + "/";
 	Synthesis *synthesisEngine = Synthesis::CreateNewSynthesisEngine("Assays/CFGs/" + name + "/ArchFile/arch.txt",
 			st, pt, rt, false, GRISSOM_FIX_0_RA, INDIVADDR_PM, PATH_FINDER_WR, BEG_COMP, pet, ALL_EX, 1, 1, 3, 3, false, false);

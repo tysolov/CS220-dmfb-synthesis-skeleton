@@ -23,7 +23,7 @@
 
 #include "assay_node.h"
 #include "../Resources/enums.h"
-#include "../Testing/claim.h"
+#include "Util/claim.h"
 #include "../Models/conditional_group.h"
 #include <stdio.h>
 #include <vector>

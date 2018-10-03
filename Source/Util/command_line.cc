@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../Headers/command_line.h"
-#include "../Headers/synthesis.h"
+#include "Util/command_line.h"
+#include "synthesis.h"
 
 //////////////////////////////////////////////////////////////////////////////
 // Creates the libraries for the command line parser. User will need to

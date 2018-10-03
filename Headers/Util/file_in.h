@@ -26,7 +26,7 @@
 #include "../Scheduler/scheduler.h"
 #include "../Placer/placer.h"
 #include "../Router/router.h"
-#include "../command_line.h"
+#include "command_line.h"
 #include "../synthesis.h"
 #include <fstream>
 #include <string>

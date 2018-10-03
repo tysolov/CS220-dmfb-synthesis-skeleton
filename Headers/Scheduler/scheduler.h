@@ -29,7 +29,7 @@
 #include "../Models/dmfb_arch.h"
 #include <string.h>
 #include "../Resources/structs.h"
-#include "../Testing/claim.h"
+#include "Util/claim.h"
 #include "../Resources/enums.h"
 
 class DmfbArch;

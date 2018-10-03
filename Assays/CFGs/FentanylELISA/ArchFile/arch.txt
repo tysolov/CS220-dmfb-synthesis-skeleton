@@ -1,0 +1,35 @@
+ARCHNAME (Arch_15_19_SampleReagent)
+DIM (15, 19)
+
+// FOR 15x19
+// Top-left
+EXTERNAL (DETECT, 2, 2, 5, 4)
+//Top-right
+EXTERNAL (DETECT, 9, 2, 12, 4)
+//Middle-left
+EXTERNAL (DETECT, 2, 8, 5, 10)
+//Middle-right
+EXTERNAL (DETECT, 9, 8, 12, 10)
+//Bottom-left
+EXTERNAL (DETECT, 2, 14, 5, 16)
+//Bottom-right
+EXTERNAL (HEAT, 9, 14, 12, 16)
+
+Input (north, 2, 2, UrineSample)
+Input (north, 4, 2, Distilled Water)
+Input (north, 6, 2, TMB Substrate)
+Input (north, 8, 2, Stop Reagent)
+Input (north, 10, 2, Morphine-Conjugate)
+Input (west, 2, 0, Heroin-Conjugate)
+Input (west, 4, 0, Fentanyl-Conjugate)
+Input (west, 6, 0, Oxycodone-Conjugate)
+Input (west, 8, 0, Diazepam-Conjugate)
+Input (west, 10, 0, Ciprofloxacin-Conjugate)
+
+Output (east, 2, 0, output)
+Output (east, 4, 0, waste, true)
+Output (east, 6, 0, Waste, false)
+Output (east, 8, 0, AmplifiedPCR)
+
+FREQ (100)
+TIMESTEP (1)

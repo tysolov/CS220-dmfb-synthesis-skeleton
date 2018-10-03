@@ -1,0 +1,12 @@
+DagName (DAG13)
+NODE (83, DISPENSE, Distilled Water, 10, Distilled Water)
+EDGE (83, 84)
+
+NODE (84, COOL, 40, REACT)
+EDGE (84, 85)
+
+NODE (85, MIX, 1, 5, Mix)
+EDGE (85, 86)
+
+NODE (86, OUTPUT, waste, Drain)
+

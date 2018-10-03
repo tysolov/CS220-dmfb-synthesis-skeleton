@@ -1,0 +1,21 @@
+DagName (DAG11)
+NODE (12, DISPENSE, TMB Substrate, 10, TMB Substrate)
+EDGE (12, 11)
+
+NODE (15, DISPENSE, Stop Reagent, 10, Stop Reagent)
+EDGE (15, 14)
+
+NODE (17, OUTPUT, waste, Drain)
+
+NODE (11, COOL, 2, REACT)
+EDGE (11, 13)
+
+NODE (13, HEAT, 2, INCUBATE)
+EDGE (13, 14)
+
+NODE (14, MIX, 2, 2, Mix)
+EDGE (14, 16)
+
+NODE (16, DETECT, 1, 2, Measure Fluorescence)
+EDGE (16, 17)
+

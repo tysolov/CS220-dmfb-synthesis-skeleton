@@ -1,0 +1,9 @@
+DagName (DAG1)
+NODE (0, DISPENSE, PCR Mixture, 10, PCR Mixture)
+EDGE (0, 2)
+
+NODE (2, HEAT, 5, HEAT)
+EDGE (2, 3)
+
+NODE (3, TRANSFER_OUT, PCRMix
+

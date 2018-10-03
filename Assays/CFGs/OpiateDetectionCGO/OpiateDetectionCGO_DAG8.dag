@@ -1,0 +1,20 @@
+DagName (DAG8)
+NODE (51, DISPENSE, TMB Substrate, 10, TMB Substrate)
+EDGE (51, 52)
+
+NODE (58, DISPENSE, Stop Reagent, 10, Stop Reagent)
+EDGE (58, 54)
+
+NODE (52, COOL, 30, REACT)
+EDGE (52, 53)
+
+NODE (53, HEAT, 1800, INCUBATE)
+EDGE (53, 54)
+
+NODE (54, MIX, 2, 30, Mix)
+EDGE (54, 56)
+
+NODE (56, DETECT, 1, 1800, HeroineReading)
+EDGE (56, 57)
+
+NODE (57, OUTPUT, waste, Drain)

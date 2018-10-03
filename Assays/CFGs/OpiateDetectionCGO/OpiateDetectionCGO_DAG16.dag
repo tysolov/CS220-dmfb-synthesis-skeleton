@@ -1,0 +1,20 @@
+DagName (DAG16)
+NODE (98, DISPENSE, TMB Substrate, 10, TMB Substrate)
+EDGE (98, 99)
+
+NODE (100, DISPENSE, Stop Reagent, 10, Stop Reagent)
+EDGE (100, 101)
+
+NODE (99, COOL, 30, REACT)
+EDGE (99, 102)
+
+NODE (102, HEAT, 1800, INCUBATE)
+EDGE (102, 101)
+
+NODE (101, MIX, 2, 30, Mix)
+EDGE (101, 103)
+
+NODE (103, DETECT, 1, 1800, OxyReading)
+EDGE (103, 104)
+
+NODE (104, OUTPUT, waste, Drain)

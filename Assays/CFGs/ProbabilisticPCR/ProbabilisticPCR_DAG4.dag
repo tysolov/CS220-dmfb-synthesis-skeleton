@@ -1,0 +1,12 @@
+DagName (DAG4)
+NODE (8, TRANSFER_IN, PCR Master Mix)
+EDGE (8, 9)
+
+NODE (9, HEAT, 40, HEAT)
+EDGE (9, 10)
+
+NODE (10, HEAT, 39, HEAT)
+EDGE (10, 11)
+
+NODE (11, TRANSFER_OUT, PCR Master Mix)
+

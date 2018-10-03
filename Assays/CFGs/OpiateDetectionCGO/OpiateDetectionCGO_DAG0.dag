@@ -1,0 +1,37 @@
+DagName (DAG0)
+NODE (4, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (4, 0)
+
+NODE (5, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (5, 1)
+
+NODE (6, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (6, 2)
+
+NODE (7, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (7, 3)
+
+NODE (105, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (105, 106)
+
+NODE (0, DETECT, 1, 5, Heroine_Reading)
+EDGE (0, 8)
+
+NODE (1, DETECT, 1, 5, Morphine_Reading)
+EDGE (1, 9)
+
+NODE (2, DETECT, 1, 5, Fentanyl_Reading)
+EDGE (2, 10)
+
+NODE (3, DETECT, 1, 5, Oxycodone_Reading)
+EDGE (3, 11)
+
+NODE (106, DETECT, 1, 5, Ciprofloxacin_Reading)
+EDGE (106, 107)
+
+NODE (8, OUTPUT, waste, Drain)
+NODE (9, OUTPUT, waste, Drain)
+NODE (10, OUTPUT, waste, Drain)
+NODE (11, OUTPUT, waste, Drain)
+NODE (107, OUTPUT, waste, Drain)
+

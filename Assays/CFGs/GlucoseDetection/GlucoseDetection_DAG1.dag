@@ -1,0 +1,66 @@
+DagName (DAG1)
+NODE (1, DISPENSE, Glucose, 10, Glucose)
+EDGE (1, 0)
+
+NODE (2, DISPENSE, Reagent, 10, Reagent)
+EDGE (2, 0)
+
+NODE (5, DISPENSE, Glucose, 20, Glucose)
+EDGE (5, 4)
+
+NODE (6, DISPENSE, Reagent, 20, Reagent)
+EDGE (6, 4)
+
+NODE (9, DISPENSE, Glucose, 40, Glucose)
+EDGE (9, 8)
+
+NODE (10, DISPENSE, Reagent, 40, Reagent)
+EDGE (10, 8)
+
+NODE (13, DISPENSE, Glucose, 80, Glucose)
+EDGE (13, 12)
+
+NODE (14, DISPENSE, Reagent, 80, Reagent)
+EDGE (14, 12)
+
+NODE (17, DISPENSE, Sample, 10, Sample)
+EDGE (17, 16)
+
+NODE (18, DISPENSE, Reagent, 10, Reagent)
+EDGE (18, 16)
+
+NODE (0, MIX, 2, 10, Mix)
+EDGE (0, 3)
+
+NODE (3, DETECT, 1, 2, Measure Fluorescence)
+EDGE (3, 20)
+
+NODE (4, MIX, 2, 10, Mix)
+EDGE (4, 7)
+
+NODE (7, DETECT, 1, 2, Measure Fluorescence)
+EDGE (7, 21)
+
+NODE (8, MIX, 2, 10, Mix)
+EDGE (8, 11)
+
+NODE (11, DETECT, 1, 2, Measure Fluorescence)
+EDGE (11, 22)
+
+NODE (12, MIX, 2, 10, Mix)
+EDGE (12, 15)
+
+NODE (15, DETECT, 1, 2, Measure Fluorescence)
+EDGE (15, 23)
+
+NODE (16, MIX, 2, 10, Mix)
+EDGE (16, 19)
+
+NODE (19, DETECT, 1, 2, Measure Fluorescence)
+EDGE (19, 24)
+
+NODE (20, OUTPUT, waste, Drain)
+NODE (21, OUTPUT, waste, Drain)
+NODE (22, OUTPUT, waste, Drain)
+NODE (23, OUTPUT, waste, Drain)
+NODE (24, OUTPUT, waste, Drain)

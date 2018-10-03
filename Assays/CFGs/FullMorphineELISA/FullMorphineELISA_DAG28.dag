@@ -1,0 +1,51 @@
+DagName (DAG28)
+NODE (34, DISPENSE, tmb_sub, 100, tmb_sub)
+EDGE (34, 39)
+
+NODE (36, DISPENSE, tmb_sub, 100, tmb_sub)
+EDGE (36, 40)
+
+NODE (38, DISPENSE, tmb_sub, 100, tmb_sub)
+EDGE (38, 41)
+
+NODE (43, DISPENSE, stop_reag, 100, Stop Reagent)
+EDGE (43, 42)
+
+NODE (45, DISPENSE, stop_reag, 100, Stop Reagent)
+EDGE (45, 44)
+
+NODE (47, DISPENSE, stop_reag, 100, Stop Reagent)
+EDGE (47, 46)
+
+NODE (39, HEAT, 1800, INCUBATE)
+EDGE (39, 42)
+
+NODE (40, HEAT, 1800, INCUBATE)
+EDGE (40, 44)
+
+NODE (41, HEAT, 1800, INCUBATE)
+EDGE (41, 46)
+
+NODE (42, MIX, 2, 60, Mix)
+EDGE (42, 48)
+
+NODE (44, MIX, 2, 60, Mix)
+EDGE (44, 49)
+
+NODE (46, MIX, 2, 60, Mix)
+EDGE (46, 50)
+
+NODE (48, DETECT, 1, 1800, Measure Fluorescence)
+EDGE (48, 51)
+
+NODE (49, DETECT, 1, 1800, Measure Fluorescence)
+EDGE (49, 52)
+
+NODE (50, DETECT, 1, 1800, Measure Fluorescence)
+EDGE (50, 53)
+
+NODE (51, OUTPUT, null, Drain)
+
+NODE (52, OUTPUT, null, Drain)
+
+NODE (53, OUTPUT, null, Drain)

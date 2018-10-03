@@ -1,0 +1,62 @@
+DagName (DAG1)
+NODE (0, DISPENSE, cells, 1600, cells)
+EDGE (0, 9)
+
+NODE (1, DISPENSE, holding, 10, holding)
+EDGE (1, 9)
+
+NODE (2, DISPENSE, lipofectamine, 1, lipofectamine)
+EDGE (2, 11)
+
+NODE (3, DISPENSE, opti_mem, 25, opti_mem)
+EDGE (3, 11)
+
+NODE (4, DISPENSE, plasmid_dna, 500, plasmid_dna)
+EDGE (4, 12)
+
+NODE (5, DISPENSE, p3000_reagent, 1, p3000_regent)
+EDGE (5, 12)
+
+NODE (6, DISPENSE, opti_mem, 25, opti_mem)
+EDGE (6, 13)
+
+NODE (7, DISPENSE, opti_mem, 557, opti_mem)
+EDGE (7, 15)
+
+NODE (8, DISPENSE, hoechst_stain, 1, hoechst_stain)
+EDGE (8, 18)
+
+NODE (9, MIX, 2, 1, MIX)
+EDGE (9, 10)
+
+NODE (10, HEAT, 28800, HEAT)
+EDGE (10, 16)
+
+NODE (11, MIX, 2, 1, MIX)
+EDGE (11, 14)
+
+NODE (12, MIX, 2, 1, MIX)
+EDGE (12, 13)
+
+NODE (13, MIX, 2, 1, MIX)
+EDGE (13, 14)
+
+NODE (14, MIX, 2, 1, MIX)
+EDGE (14, 15)
+
+NODE (15, MIX, 2, 1, MIX)
+EDGE (15, 16)
+
+NODE (16, MIX, 2, 1, MIX)
+EDGE (16, 17)
+
+NODE (17, HEAT, 86400, HEAT)
+EDGE (17, 18)
+
+NODE (18, MIX, 2, 1, MIX)
+EDGE (18, 19)
+
+NODE (19, DETECT, 1, 1, DETECT)
+EDGE (19, 20)
+
+NODE (20, OUTPUT, drain, Drain)

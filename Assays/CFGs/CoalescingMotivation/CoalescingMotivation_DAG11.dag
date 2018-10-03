@@ -1,0 +1,15 @@
+DagName (DAG11)
+NODE (17, TRANSFER_IN, c)
+EDGE (17, 19)
+
+NODE (18, TRANSFER_IN, d)
+EDGE (18, 19)
+
+NODE (19, MIX, 2, 1, MIX)
+EDGE (19, 20)
+
+NODE (20, HEAT, 2, HEAT)
+EDGE (20, 21)
+
+NODE (21, OUTPUT, drain, DRAIN)
+

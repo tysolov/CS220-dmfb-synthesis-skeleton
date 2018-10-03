@@ -1,0 +1,20 @@
+DagName (DAG4)
+NODE (33, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (33, 35)
+
+NODE (34, DISPENSE, Ciprofloxacin-Conjugate, 10, Ciprofloxacin-Conjugate)
+EDGE (34, 36)
+
+NODE (35, COOL, 25, REACT)
+EDGE (35, 37)
+
+NODE (36, COOL, 25, REACT)
+EDGE (36, 37)
+
+NODE (37, MIX, 2, 10, Tap)
+EDGE (37, 38)
+
+NODE (38, HEAT, 3600, INCUBATE)
+EDGE (38, 39)
+
+NODE (39, OUTPUT, waste, Drain)

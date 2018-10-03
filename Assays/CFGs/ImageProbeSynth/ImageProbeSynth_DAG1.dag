@@ -1,0 +1,41 @@
+DagName (DAG1)
+NODE (1, DISPENSE, Flouride Ions F-, 10, Flouride Ions F-)
+EDGE (1, 0)
+
+NODE (2, DISPENSE, Ion Exchange Beads, 10, Ion Exchange Beads)
+EDGE (2, 0)
+
+NODE (7, DISPENSE, MeCN Solution, 10, MeCN Solution)
+EDGE (7, 6)
+
+NODE (11, DISPENSE, HCl, 10, HCl)
+EDGE (11, 10)
+
+NODE (0, MIX, 2, 30, Mix)
+EDGE (0, 3)
+
+NODE (3, HEAT, 30, HEAT)
+EDGE (3, 4)
+
+NODE (4, HEAT, 30, HEAT)
+EDGE (4, 5)
+
+NODE (5, HEAT, 180, HEAT)
+EDGE (5, 6)
+
+NODE (6, MIX, 2, 30, Mix)
+EDGE (6, 8)
+
+NODE (8, HEAT, 30, INCUBATE)
+EDGE (8, 9)
+
+NODE (9, HEAT, 50, INCUBATE)
+EDGE (9, 10)
+
+NODE (10, MIX, 2, 60, Mix)
+EDGE (10, 12)
+
+NODE (12, HEAT, 60, HEAT)
+EDGE (12, 13)
+
+NODE (13, OUTPUT, waste, Drain)

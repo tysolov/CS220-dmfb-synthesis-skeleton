@@ -1,0 +1,21 @@
+DagName (DAG6)
+NODE (11, TRANSFER_IN, PCRMix)
+EDGE (11, 16)
+
+NODE (13, DISPENSE, templateSample, 10, templateSample)
+EDGE (13, 12)
+
+NODE (14, DISPENSE, PCRSample, 10, PCRSample)
+EDGE (14, 12)
+
+NODE (12, MIX, 2, 1, Mix)
+EDGE (12, 15)
+
+NODE (15, HEAT, 44, HEAT)
+EDGE (15, 16)
+
+NODE (16, MIX, 2, 1, Mix)
+EDGE (16, 17)
+
+NODE (17, TRANSFER_OUT, PCRMix)
+

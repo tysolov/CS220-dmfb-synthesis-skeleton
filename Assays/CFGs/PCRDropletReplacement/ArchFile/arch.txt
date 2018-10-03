@@ -1,0 +1,39 @@
+ARCHNAME (Arch_15_19_SampleReagent)
+DIM (15, 19)
+
+// FOR 15x19
+// Top-left
+EXTERNAL (DETECT, 2, 2, 5, 4)
+//Top-right
+//EXTERNAL (DETECT, 9, 2, 12, 4)
+//Top-Middle-left
+//EXTERNAL (HEAT, 2, 6, 5, 8)
+//Top-Middle-right
+EXTERNAL (HEAT, 9, 6, 12, 8)
+//Bottom-Middle-left
+//EXTERNAL (DETECT, 2, 10, 5, 12)
+//Bottom-Middle-right
+//EXTERNAL (DETECT, 9, 10, 12, 12)
+//Bottom-left
+//EXTERNAL (HEAT, 2, 14, 5, 16)
+//Bottom-right
+//EXTERNAL (HEAT, 9, 14, 12, 16)
+
+Input (north, 2, 2, Buffer)
+Input (north, 4, 2, PCRSample)
+Input (north, 6, 2, templateSample)
+Input (north, 8, 2, PCR Master Mix)
+Input (north, 10, 2, PCR)
+Input (west, 2, 0, wash, true)
+Input (west, 4, 0, Template)
+Input (west, 6, 0, Primers)
+Input (west, 8, 0, ReplacementMix)
+Input (west, 10, 0, PCRMasterMix)
+
+Output (east, 2, 0, output)
+Output (east, 4, 0, waste, true)
+Output (east, 6, 0, null, false)
+Output (east, 8, 0, AmplifiedPCR)
+
+FREQ (100)
+TIMESTEP (1)

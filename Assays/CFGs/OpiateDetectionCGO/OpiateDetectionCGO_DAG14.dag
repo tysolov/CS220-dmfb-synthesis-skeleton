@@ -1,0 +1,20 @@
+DagName (DAG14)
+NODE (87, DISPENSE, TMB Substrate, 10, TMB Substrate)
+EDGE (87, 88)
+
+NODE (89, DISPENSE, Stop Reagent, 10, Stop Reagent)
+EDGE (89, 90)
+
+NODE (88, COOL, 30, REACT)
+EDGE (88, 91)
+
+NODE (91, HEAT, 1800, INCUBATE)
+EDGE (91, 90)
+
+NODE (90, MIX, 2, 30, Mix)
+EDGE (90, 92)
+
+NODE (92, DETECT, 1, 1800, FentanylReading)
+EDGE (92, 93)
+
+NODE (93, OUTPUT, waste, Drain)

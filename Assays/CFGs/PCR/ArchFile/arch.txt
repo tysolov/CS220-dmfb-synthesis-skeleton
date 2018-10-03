@@ -1,0 +1,35 @@
+ARCHNAME (Arch_15_19_SampleReagent)
+DIM (15, 19)
+
+// FOR 15x19
+// Top-left
+EXTERNAL (DETECT, 2, 2, 5, 4)
+//Top-right
+EXTERNAL (DETECT, 9, 2, 12, 4)
+//Middle-left
+EXTERNAL (DETECT, 2, 8, 5, 10)
+//Middle-right
+EXTERNAL (DETECT, 9, 8, 12, 10)
+//Bottom-left
+EXTERNAL (HEAT, 2, 14, 5, 16)
+//Bottom-right
+EXTERNAL (HEAT, 9, 14, 12, 16)
+
+Input (north, 2, 2, PCR Mixture)
+Input (north, 4, 2, kcl)
+Input (north, 6, 2, bovine)
+Input (north, 8, 2, gelatin)
+Input (north, 10, 2, primer)
+Input (west, 2, 0, wash, true)
+Input (west, 4, 0, beosynucleotide)
+Input (west, 6, 0, amplitag)
+Input (west, 8, 0, lambda)
+Input (west, 10, 0, PCRMasterMix)
+
+Output (east, 2, 0, output)
+Output (east, 4, 0, waste, true)
+Output (east, 6, 0, null, false)
+Output (east, 8, 0, AmplifiedPCR)
+
+FREQ (100)
+TIMESTEP (1)

@@ -1,0 +1,12 @@
+DagName (DAG9)
+NODE (59, DISPENSE, Distilled Water, 10, Distilled Water)
+EDGE (59, 60)
+
+NODE (60, COOL, 40, REACT)
+EDGE (60, 61)
+
+NODE (61, MIX, 1, 5, Mix)
+EDGE (61, 62)
+
+NODE (62, OUTPUT, waste, Drain)
+

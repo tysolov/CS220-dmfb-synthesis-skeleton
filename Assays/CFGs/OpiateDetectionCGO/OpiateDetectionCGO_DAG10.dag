@@ -1,0 +1,20 @@
+DagName (DAG10)
+NODE (63, DISPENSE, TMB Substrate, 10, TMB Substrate)
+EDGE (63, 64)
+
+NODE (65, DISPENSE, Stop Reagent, 10, Stop Reagent)
+EDGE (65, 66)
+
+NODE (64, COOL, 30, REACT)
+EDGE (64, 67)
+
+NODE (67, HEAT, 1800, INCUBATE)
+EDGE (67, 66)
+
+NODE (66, MIX, 2, 30, Mix)
+EDGE (66, 68)
+
+NODE (68, DETECT, 1, 1800, MorphineReading)
+EDGE (68, 69)
+
+NODE (69, OUTPUT, waste, Drain)

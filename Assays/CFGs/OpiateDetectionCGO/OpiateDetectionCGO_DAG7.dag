@@ -1,0 +1,11 @@
+DagName (DAG7)
+NODE (48, DISPENSE, Distilled Water, 10, Distilled Water)
+EDGE (48, 47)
+
+NODE (47, COOL, 40, REACT)
+EDGE (47, 49)
+
+NODE (49, MIX, 1, 5, Mix)
+EDGE (49, 50)
+
+NODE (50, OUTPUT, waste, Drain)

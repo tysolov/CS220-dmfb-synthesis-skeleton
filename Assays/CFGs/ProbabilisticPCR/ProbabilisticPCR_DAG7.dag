@@ -1,0 +1,9 @@
+DagName (DAG7)
+NODE (12, TRANSFER_IN, PCR Master Mix)
+EDGE (12, 13)
+
+NODE (13, DETECT, 1, 30, Measure Fluorescence)
+EDGE (13, 14)
+
+NODE (14, TRANSFER_OUT, PCR Master Mix)
+

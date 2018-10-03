@@ -1,0 +1,9 @@
+DagName (DAG8)
+NODE (10, TRANSFER_IN, PCRMix)
+EDGE (10, 11)
+
+NODE (11, DETECT, 1, 180, Measure Fluorescence)
+EDGE (11, 12)
+
+NODE (12, OUTPUT, null, Drain)
+

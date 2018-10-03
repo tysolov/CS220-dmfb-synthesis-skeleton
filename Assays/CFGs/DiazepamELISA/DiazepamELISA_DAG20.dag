@@ -1,0 +1,20 @@
+DagName (DAG20)
+NODE (20, DISPENSE, TMB Substrate, 100, TMB Substrate)
+EDGE (20, 19)
+
+NODE (23, DISPENSE, Stop Reagent, 100, Stop Reagent)
+EDGE (23, 22)
+
+NODE (19, COOL, 50, REACT)
+EDGE (19, 21)
+
+NODE (21, HEAT, 850, INCUBATE)
+EDGE (21, 22)
+
+NODE (22, MIX, 2, 60, Mix)
+EDGE (22, 24)
+
+NODE (24, DETECT, 1, 1800, Measure Fluorescence)
+EDGE (24, 25)
+
+NODE (25, OUTPUT, null, Drain)

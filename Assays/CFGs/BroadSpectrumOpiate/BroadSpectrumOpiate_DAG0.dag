@@ -1,0 +1,40 @@
+DagName (DAG0)
+NODE (1, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (1, 10)
+
+NODE (3, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (3, 11)
+
+NODE (5, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (5, 12)
+
+NODE (7, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (7, 13)
+
+NODE (9, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (9, 14)
+
+NODE (10, DETECT, 1, 5, Measure Fluorescence)
+EDGE (10, 16)
+
+NODE (11, DETECT, 1, 5, Measure Fluorescence)
+EDGE (11, 17)
+
+NODE (12, DETECT, 1, 5, Measure Fluorescence)
+EDGE (12, 18)
+
+NODE (13, DETECT, 1, 5, Measure Fluorescence)
+EDGE (13, 19)
+
+NODE (14, DETECT, 1, 5, Measure Fluorescence)
+EDGE (14, 20)
+
+//NODE (15, MIX, 5, 2, MIX)
+//EDGE (15, 16)
+
+NODE (16, OUTPUT, waste, Drain)
+NODE (17, OUTPUT, waste, Drain)
+NODE (18, OUTPUT, waste, Drain)
+NODE (19, OUTPUT, waste, Drain)
+NODE (20, OUTPUT, waste, Drain)
+

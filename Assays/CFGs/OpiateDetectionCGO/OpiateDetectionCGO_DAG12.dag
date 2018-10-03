@@ -1,0 +1,20 @@
+DagName (DAG12)
+NODE (76, DISPENSE, TMB Substrate, 10, TMB Substrate)
+EDGE (76, 77)
+
+NODE (78, DISPENSE, Stop Reagent, 10, Stop Reagent)
+EDGE (78, 79)
+
+NODE (77, COOL, 30, REACT)
+EDGE (77, 80)
+
+NODE (80, HEAT, 1800, INCUBATE)
+EDGE (80, 79)
+
+NODE (79, MIX, 2, 30, Mix)
+EDGE (79, 81)
+
+NODE (81, DETECT, 1, 300, CiproReading)
+EDGE (81, 82)
+
+NODE (82, OUTPUT, waste, Drain)

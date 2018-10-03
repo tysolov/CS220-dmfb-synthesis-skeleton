@@ -1,0 +1,20 @@
+DagName (DAG1)
+NODE (17, DISPENSE, UrineSample, 10, Urine Sample)
+EDGE (17, 12)
+
+NODE (18, DISPENSE, Heroin-Conjugate, 10, Heroin-Conjugate)
+EDGE (18, 13)
+
+NODE (12, COOL, 25, REACT)
+EDGE (12, 14)
+
+NODE (13, COOL, 25, REACT)
+EDGE (13, 14)
+
+NODE (14, MIX, 2, 10, Tap)
+EDGE (14, 15)
+
+NODE (15, HEAT, 3600, INCUBATE)
+EDGE (15, 16)
+
+NODE (16, OUTPUT, waste, Drain)

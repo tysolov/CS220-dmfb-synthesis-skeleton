@@ -1,0 +1,21 @@
+DagName (DAG5)
+NODE (40, DISPENSE, UrineSample, 10, Urine Sample)
+EDGE (40, 42)
+
+NODE (41, DISPENSE, Oxycodone-Conjugate, 10, Oxycodone-Conjugate)
+EDGE (41, 43)
+
+NODE (42, COOL, 25, REACT)
+EDGE (42, 44)
+
+NODE (43, COOL, 25, REACT)
+EDGE (43, 44)
+
+NODE (44, MIX, 2, 10, Tap)
+EDGE (44, 45)
+
+NODE (45, HEAT, 3600, INCUBATE)
+EDGE (45, 46)
+
+NODE (46, OUTPUT, waste, Drain)
+

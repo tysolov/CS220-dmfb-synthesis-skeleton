@@ -1,0 +1,18 @@
+DagName (DAG0)
+NODE (1, DISPENSE, UrineSample, 50, UrineSample)
+EDGE (1, 0)
+
+NODE (3, DISPENSE, Diazepam-Antibody, 10, Diazepam-Antibody)
+EDGE (3, 2)
+
+NODE (0, COOL, 10, REACT)
+EDGE (0, 2)
+
+NODE (2, MIX, 2, 50, Tap)
+EDGE (2, 5)
+
+NODE (5, HEAT, 1800, INCUBATE)
+EDGE (5, 6)
+
+NODE (6, OUTPUT, null, Drain)
+

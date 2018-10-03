@@ -1,0 +1,12 @@
+DagName (DAG15)
+NODE (94, DISPENSE, Distilled Water, 10, Distilled Water)
+EDGE (94, 95)
+
+NODE (95, COOL, 40, REACT)
+EDGE (95, 96)
+
+NODE (96, MIX, 1, 5, Mix)
+EDGE (96, 97)
+
+NODE (97, OUTPUT, waste, Drain)
+

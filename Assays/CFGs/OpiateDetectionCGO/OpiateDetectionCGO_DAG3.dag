@@ -1,0 +1,21 @@
+DagName (DAG3)
+NODE (26, DISPENSE, UrineSample, 10, UrineSample)
+EDGE (26, 28)
+
+NODE (27, DISPENSE, Morphine-Conjugate, 10, Morphine-Conjugate)
+EDGE (27, 29)
+
+NODE (28, COOL, 25, REACT)
+EDGE (28, 30)
+
+NODE (29, COOL, 25, REACT)
+EDGE (29, 30)
+
+NODE (30, MIX, 2, 10, Tap)
+EDGE (30, 31)
+
+NODE (31, HEAT, 3600, INCUBATE)
+EDGE (31, 32)
+
+NODE (32, OUTPUT, waste, Drain)
+

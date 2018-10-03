@@ -1,0 +1,24 @@
+DagName (DAG1)
+NODE (0, DISPENSE, a, 10, a)
+EDGE (0, 3)
+
+NODE (1, DISPENSE, b, 10, b)
+EDGE (1, 5)
+
+NODE (2, DISPENSE, c, 10, c)
+EDGE (2, 4)
+
+NODE (3, HEAT, 2, HEAT)
+EDGE (3, 5)
+
+NODE (4, HEAT, 2, HEAT)
+EDGE (4, 7)
+
+NODE (5, MIX, 2, 1, MIX)
+EDGE (5, 6)
+
+NODE (6, DETECT, 1, 2, detector)
+EDGE (6, 8)
+
+NODE (7, TRANSFER_OUT, c)
+NODE (8, TRANSFER_OUT, d)

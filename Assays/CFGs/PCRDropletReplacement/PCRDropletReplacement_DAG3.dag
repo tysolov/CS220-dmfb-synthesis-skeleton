@@ -1,0 +1,12 @@
+DagName (DAG3)
+NODE (7, TRANSFER_IN, PCRMix)
+EDGE (7, 8)
+
+NODE (8, HEAT, 19, HEAT)
+EDGE (8, 9)
+
+NODE (9, DETECT, 1, 1, Weigh)
+EDGE (9, 10)
+
+NODE (10, TRANSFER_OUT, PCRMix)
+

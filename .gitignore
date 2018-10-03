@@ -1,0 +1,15 @@
+
+*.xml
+*.iml
+.idea/.name
+*.cmake
+*.out
+*.bin
+*.log
+*.check_cache
+*.make
+*.internal
+*.o
+*.includecache
+
+cmake-build-debug/*

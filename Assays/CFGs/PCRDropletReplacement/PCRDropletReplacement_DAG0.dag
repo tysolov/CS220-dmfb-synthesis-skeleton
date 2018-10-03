@@ -1,0 +1,12 @@
+DagName (DAG0)
+NODE (1, DISPENSE, PCR Master Mix, 10, PCR Master Mix)
+EDGE (1, 0)
+
+NODE (2, DISPENSE, Template, 10, Template)
+EDGE (2, 0)
+
+NODE (0, MIX, 2, 47, Mix)
+EDGE (0, 3)
+
+NODE (3, TRANSFER_OUT, PCRMix)
+

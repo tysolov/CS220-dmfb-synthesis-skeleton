@@ -1,0 +1,25 @@
+DagName (DAG18)
+NODE (22, DISPENSE, Water, 350, water)
+EDGE (22, 27)
+
+NODE (24, DISPENSE, Water, 350, water)
+EDGE (24, 28)
+
+NODE (26, DISPENSE, Water, 350, water)
+EDGE (26, 29)
+
+NODE (27, MIX, 1, 45, VORTEX)
+EDGE (27, 30)
+
+NODE (28, MIX, 1, 45, VORTEX)
+EDGE (28, 31)
+
+NODE (29, MIX, 1, 45, VORTEX)
+EDGE (29, 32)
+
+NODE (30, OUTPUT, null, Drain)
+
+NODE (31, OUTPUT, null, Drain)
+
+NODE (32, OUTPUT, null, Drain)
+

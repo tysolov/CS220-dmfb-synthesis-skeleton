@@ -1,0 +1,43 @@
+DagName (DAG1)
+NODE (1, DISPENSE, neg-std, 20, Negative Standard)
+EDGE (1, 12)
+
+NODE (3, DISPENSE, pos-std, 20, Positive Standard)
+EDGE (3, 13)
+
+NODE (5, DISPENSE, dilute, 20, Diluted Sample)
+EDGE (5, 14)
+
+NODE (7, DISPENSE, mrph, 100, Morphine-Conjugate)
+EDGE (7, 12)
+
+NODE (9, DISPENSE, mrph, 100, Morphine-Conjugate)
+EDGE (9, 13)
+
+NODE (11, DISPENSE, mrph, 100, Morphine-Conjugate)
+EDGE (11, 14)
+
+NODE (12, MIX, 2, 60, Tap)
+EDGE (12, 15)
+
+NODE (13, MIX, 2, 60, Tap)
+EDGE (13, 16)
+
+NODE (14, MIX, 2, 60, Tap)
+EDGE (14, 17)
+
+NODE (15, HEAT, 3600, INCUBATE)
+EDGE (15, 18)
+
+NODE (16, HEAT, 3600, INCUBATE)
+EDGE (16, 19)
+
+NODE (17, HEAT, 3600, INCUBATE)
+EDGE (17, 20)
+
+NODE (18, OUTPUT, null, Drain)
+
+NODE (19, OUTPUT, null, Drain)
+
+NODE (20, OUTPUT, null, Drain)
+

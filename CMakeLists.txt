@@ -1,0 +1,112 @@
+cmake_minimum_required(VERSION 3.10)
+project(MFSimSSA)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+set(CMAKE_CXX_STANDARD 17)
+
+include_directories(Headers)
+include_directories(Headers/Models)
+include_directories(Headers/PinMapper)
+include_directories(Headers/Placer)
+include_directories(Headers/Resources)
+include_directories(Headers/Router)
+include_directories(Headers/Scheduler)
+include_directories(Headers/Testing)
+include_directories(Headers/Util)
+include_directories(Headers/WireRouter)
+include_directories(Assays)
+include_directories(Assays/CFGs)
+
+add_executable(CS220Synth
+        Headers/Models/assay_node.h
+        Headers/Models/cfg.h
+        Headers/Models/compiled_cfg.h
+        Headers/Models/compiled_dag.h
+        Headers/Models/conditional_group.h
+        Headers/Models/dag.h
+        Headers/Models/diagonal_wire_routing_model.h
+        Headers/Models/dmfb_arch.h
+        Headers/Models/droplet.h
+        Headers/Models/entity.h
+        Headers/Models/expression.h
+        Headers/Models/fixed_module.h
+        Headers/Models/io_port.h
+        Headers/Models/min_cost_max_flow_graph.h
+        Headers/Models/op_module.h
+        Headers/Models/reconfig_module.h
+        Headers/PinMapper/indiv_addr_pin_mapper.h
+        Headers/PinMapper/pin_mapper.h
+        Headers/Placer/cs220_placer.h
+        Headers/Placer/grissom_left_edge_binder.h
+        Headers/Placer/placer.h
+        Headers/Resources/enums.h
+        Headers/Resources/structs.h
+        Headers/Router/cs220_router.h
+        Headers/Router/post_subprob_compact_router.h
+        Headers/Router/router.h
+        Headers/Router/roy_maze_router.h
+        Headers/Scheduler/cs220_scheduler.h
+        Headers/Scheduler/list_scheduler.h
+        Headers/Scheduler/priority.h
+        Headers/Scheduler/scheduler.h
+        Headers/Testing/claim.h
+        Headers/Testing/elapsed_timer.h
+        Headers/Util/analyze.h
+        Headers/Util/file_in.h
+        Headers/Util/file_out.h
+        Headers/Util/sort.h
+        Headers/Util/util.h
+        Headers/WireRouter/path_finder_wire_router.h
+        Headers/WireRouter/paths.h
+        Headers/WireRouter/wire_router.h
+        Headers/WireRouter/wire_segment.h
+        Headers/command_line.h
+        Headers/compatibility_check.h
+        Headers/synthesis.h
+        Source/Models/assay_node.cc
+        Source/Models/cfg.cc
+        Source/Models/compiled_cfg.cc
+        Source/Models/compiled_dag.cc
+        Source/Models/conditional_group.cc
+        Source/Models/dag.cc
+        Source/Models/diagonal_wire_routing_model.cc
+        Source/Models/dmfb_arch.cc
+        Source/Models/droplet.cc
+        Source/Models/entity.cc
+        Source/Models/expression.cc
+        Source/Models/fixed_module.cc
+        Source/Models/io_port.cc
+        Source/Models/min_cost_max_flow_graph.cc
+        Source/Models/op_module.cc
+        Source/Models/reconfig_module.cc
+        Source/Models/operation_coalescing_pool.cc
+        Source/PinMapper/indiv_addr_pin_mapper.cc
+        Source/PinMapper/pin_mapper.cc
+        Source/Placer/cs220_placer.cc
+        Source/Placer/grissom_left_edge_binder.cc
+        Source/Placer/placer.cc
+        Source/Router/cs220_router.cc
+        Source/Router/post_subprob_compact_router.cc
+        Source/Router/router.cc
+        Source/Router/roy_maze_router.cc
+        Source/Scheduler/list_scheduler.cc
+        Source/Scheduler/cs220_scheduler.cc
+        Source/Scheduler/priority.cc
+        Source/Scheduler/scheduler.cc
+        Source/Testing/claim.cc
+        Source/Testing/elapsed_timer.cc
+        Source/Util/analyze.cc
+        Source/Util/file_in.cc
+        Source/Util/file_out.cc
+        Source/Util/sort.cc
+        Source/Util/util.cc
+        Source/WireRouter/path_finder_wire_router.cc
+        Source/WireRouter/paths.cc
+        Source/WireRouter/wire_router.cc
+        Source/WireRouter/wire_segment.cc
+        Source/command_line.cc
+        Source/compatibility_check.cc
+        Source/main.cc
+        Source/synthesis.cc)
+

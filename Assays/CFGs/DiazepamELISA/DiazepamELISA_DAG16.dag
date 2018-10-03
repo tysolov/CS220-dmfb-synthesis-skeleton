@@ -1,0 +1,12 @@
+DagName (DAG16)
+NODE (16, DISPENSE, Distilled Water, 250, Distilled Water)
+EDGE (16, 15)
+
+NODE (15, COOL, 5, REACT)
+EDGE (15, 17)
+
+NODE (17, MIX, 1, 40, Mix)
+EDGE (17, 18)
+
+NODE (18, OUTPUT, null, Drain)
+

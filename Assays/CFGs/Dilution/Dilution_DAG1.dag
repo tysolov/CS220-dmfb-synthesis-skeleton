@@ -1,0 +1,65 @@
+DagName (DAG1)
+NODE (1, DISPENSE, SubstanceC, 10, SubstanceC)
+EDGE (1, 0)
+
+NODE (2, DISPENSE, SubstanceA, 10, SubstanceA)
+EDGE (2, 0)
+
+NODE (6, DISPENSE, SubstanceC, 10, SubstanceC)
+EDGE (6, 5)
+
+NODE (10, DISPENSE, SubstanceC, 10, SubstanceA)
+EDGE (10, 9)
+
+NODE (14, DISPENSE, SubstanceB, 10, SubstanceB)
+EDGE (14, 13)
+
+NODE (15, DISPENSE, SubstanceC, 10, SubstanceC)
+EDGE (15, 13)
+
+NODE (0, MIX, 2, 2, Mix)
+EDGE (0, 3)
+
+NODE (3, SPLIT, 2, 2, SPLIT)
+EDGE (3, 4)
+EDGE (3, 5)
+
+NODE (4, OUTPUT, null, Drain)
+
+NODE (5, MIX, 2, 2, Mix)
+EDGE (5, 7)
+
+NODE (7, SPLIT, 2, 2, SPLIT)
+EDGE (7, 8)
+EDGE (7, 9)
+
+NODE (8, OUTPUT, null, Drain)
+
+NODE (9, MIX, 2, 2, Mix)
+EDGE (9, 11)
+
+NODE (11, SPLIT, 2, 2, SPLIT)
+EDGE (11, 18)
+EDGE (11, 12)
+
+NODE (12, OUTPUT, null, Drain)
+
+NODE (13, MIX, 2, 2, Mix)
+EDGE (13, 16)
+
+NODE (16, SPLIT, 2, 2, SPLIT)
+EDGE (16, 17)
+EDGE (16, 18)
+
+NODE (17, OUTPUT, null, Drain)
+
+NODE (18, MIX, 2, 2, Mix)
+EDGE (18, 19)
+
+NODE (19, SPLIT, 2, 2, SPLIT)
+EDGE (19, 20)
+EDGE (19, 21)
+
+NODE (20, OUTPUT, null, Drain)
+
+NODE (21, OUTPUT, null, Save)

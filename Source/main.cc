@@ -81,7 +81,7 @@ int main(int argc, char **argv)
 	// Clear the Output directory
 	while ( (next_file = readdir(theFolder)) != NULL )
 	{
-		if (0==strcmp(next_file->d_name, ".") || 0==strcmp(next_file->d_name, "..")) { continue; }
+		if (0==strcmp(next_file->d_name, ".") || 0==strcmp(next_file->d_name, "..") || 0==strcmp(next_file->d_name, ".keep")) { continue; }
 		sprintf(filepath, "%s/%s", "Output", next_file->d_name);
 		remove(filepath);
 	}

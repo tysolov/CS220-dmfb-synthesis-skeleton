@@ -61,6 +61,8 @@ IoResource * ListScheduler::getReadyDispenseWell(string fluidName, unsigned long
 	}
 	return nullptr;
 }
+
+
 ///////////////////////////////////////////////////////////////////////////////////
 // Schedules the DAG (contained by synthesis) according to the list scheduling
 // algorithm.
@@ -88,16 +90,6 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 
 	// If we have transfer-ins with immediate transfer-outs, take care of them first b/c we'll need to account for storage;
 	// Also take care of transfer-ins with immediate outputs as they won't be scheduled otherwise
-	//	unsigned maxOutTS = 0;
-	//	for (int i = 0; i < dag->tails.size(); i++)
-	//		if (maxOutTS < dag->tails.at(i)->startTimeStep && dag->tails.at(i)->parents.front()->GetType() != TRANSFER_IN && dag->tails.at(i)->parents.front()->GetType() != DISPENSE)
-	//			maxOutTS = dag->tails.at(i)->startTimeStep;
-	//	unsigned minInTS = maxOutTS;
-	//	for (int i = 0; i < dag->heads.size(); i++)
-	//		if (minInTS > dag->heads.at(i)->startTimeStep && dag->heads.at(i)->children.front()->GetType() != TRANSFER_OUT && dag->heads.at(i)->children.front()->GetType() != OUTPUT)
-	//			minInTS = dag->heads.at(i)->startTimeStep;
-	//	if (minInTS < timeStep + 1)
-	//		minInTS = timeStep + 1;
 	for (int i = 0; i < dag->heads.size(); i++)
 	{
 		AssayNode *in = dag->heads.at(i);
@@ -111,7 +103,7 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 				in->children.front()->endTimeStep = schedTS + 1;
 				in->children.front()->status = SCHEDULED;
 			}
-			else //if (in->children.front()->GetType() == TRANSFER_OUT)
+			else
 			{
 				// Droplets will remain on DMFB for some time (possibly entire time if child is TRANSFER_OUT), so account for
 				dropsInStorage++;
@@ -120,45 +112,6 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 		}
 	}
 
-
-
-
-	// If we have transfer-outs, make sure they're scheduled at very end of
-	// DAG so we can insert storage nodes between them and their parent
-	//	unsigned maxOutTS = 0;
-	//	for (int i = 0; i < dag->tails.size(); i++)
-	//		if (maxOutTS < dag->tails.at(i)->startTimeStep && dag->tails.at(i)->parents.front()->GetType() != TRANSFER_IN && dag->tails.at(i)->parents.front()->GetType() != DISPENSE)
-	//			maxOutTS = dag->tails.at(i)->startTimeStep;
-	//	unsigned minInTS = maxOutTS;
-	//	for (int i = 0; i < dag->heads.size(); i++)
-	//		if (minInTS > dag->heads.at(i)->startTimeStep && dag->heads.at(i)->children.front()->GetType() != TRANSFER_OUT && dag->heads.at(i)->children.front()->GetType() != OUTPUT)
-	//			minInTS = dag->heads.at(i)->startTimeStep;
-	//	if (minInTS < timeStep + 1)
-	//		minInTS = timeStep + 1;
-	//	for (int i = 0; i < dag->tails.size(); i++)
-	//	{
-	//		AssayNode *out = dag->tails.at(i);
-	//		if (out->parents.front()->GetType() == TRANSFER_IN) // This is a pass through droplet, adjust start-stop times
-	//			out->parents.front()->startTimeStep = out->parents.front()->endTimeStep = out->startTimeStep = out->endTimeStep	= minInTS;
-	//		if (out->GetType() == TRANSFER_OUT && maxOutTS > out->startTimeStep)
-	//		{
-	//			for (unsigned j = out->startTimeStep; j < maxOutTS; j++)
-	//				availResAtTS->find(j)->second->dropsInStorage++;
-	//			out->startTimeStep = out->endTimeStep = maxOutTS;
-	//		}
-	//	}
-	//	for (int i = 0; i < dag->heads.size(); i++)
-	//	{
-	//		AssayNode *in = dag->heads.at(i);
-	//		if (in->GetType() == TRANSFER_IN && in->endTimeStep > minInTS &&
-	//				in->children.front()->GetType() != TRANSFER_OUT && in->children.front()->GetType() != OUTPUT)
-	//		{
-	//			for (unsigned j = minInTS; j < in->endTimeStep; j++)
-	//				availResAtTS->find(j)->second->dropsInStorage++;
-	//			in->startTimeStep = in->endTimeStep = minInTS;
-	//		}
-	//	}
-
 	// If no nodes to schedule, increment TS for proper accounting at end
 	// since following loop will never be executed
 	if (!moreNodesToSchedule())
@@ -166,9 +119,6 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 
 	while(moreNodesToSchedule())
 	{
-		//cout << "DB: Scheduling Time Step " << schedTS << endl << "----------------------------" << endl;
-		//cout << "\tlocDrops " << dropsInLoc << " -- stDrops " << dropsInStorage << " -- stChams " << numStorageModules << endl;
-
 		// If any ops just finished, their droplets go back into "storage" until otherwise claimed
 		vector<AssayNode*> finishedOps;
 		vector<AssayNode*> scheduledOps;
@@ -178,8 +128,6 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 		for (; it != unfinishedOps->end(); it++)
 		{
 			AssayNode *node = *it;
-
-			//cout << "\tUnfinished Operation: " << node->GetName() << endl;
 
 			if (node->GetEndTS() == schedTS)
 			{
@@ -220,7 +168,6 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 		for (; it != candidateOps->end(); it++)
 		{
 			AssayNode *n = *it;
-			//cout << "Candidate Operation: " << n->GetName() << endl;
 			int netStorageDropsGain = 0;
 			int netLocDropsGain = 0;
 
@@ -231,7 +178,7 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 				AssayNode *par = n->GetParents().at(p);
 				if (par->GetType() == DISPENSE)
 				{
-					//netStorageDropsGain++;// Pretend like this came from storage for a moment to cancel out later
+
 					if (!getReadyDispenseWell(par->GetPortName(), schedTS))
 						parentsDone = false;
 				}
@@ -330,7 +277,6 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 						n->endTimeStep = schedTS+1;		// Increment output end time by 1 TS (is this necessary?)
 					scheduledOps.push_back(n);
 
-					//cout << "DEBUG: " << n->name << ": [" << n->startTimeStep << ", " << n->endTimeStep << "]" << endl;// dtg debug
 
 					// Update any dispense parents & insert any necessary storage nodes into the DAG
 					vector<AssayNode*> pInsert;
@@ -395,10 +341,6 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 		int dis = dropsInStorage;
 		while (dis > 0)
 		{
-			//AssayNode *node = dag->AddStorageHolderNode();
-			//node->startTimeStep = schedTS;
-			//node->endTimeStep = schedTS + 1;
-			//node->cycles = (node->GetEndTS()-node->GetStartTS())* (arch->getFreqInHz() * arch->getSecPerTS());
 			if (dis >= getMaxStoragePerModule())
 				dis -= getMaxStoragePerModule();
 			else
@@ -408,22 +350,18 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 			if (ar[BASIC_RES] > 0)
 			{
 				ar[BASIC_RES]--;
-				//node->boundedResType = BASIC_RES;
 			}
 			else if (ar[H_RES] > 0)
 			{
 				ar[H_RES]--;
-				//node->boundedResType = H_RES;
 			}
 			else if (ar[D_RES] > 0)
 			{
 				ar[D_RES]--;
-				//node->boundedResType = D_RES;
 			}
 			else
 			{
 				ar[DH_RES]--;
-				//node->boundedResType = DH_RES;
 			}
 		}
 
@@ -441,15 +379,9 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
 			return 1000000;
 		}
 
-		//if (schedTS > 1000)
-		//	return 10000;
-
-		//cout << "storage: " << dropsInStorage << endl; // dtg debug
-		//cout << "loc: " << dropsInLoc << endl; // dtg debug
 	}
 
-    // If we have transfer-outs, makes sure they are scheduled at
-    // TODO:: verify this change is correct -
+    // If we have transfer-outs,
     // w/ non dispense/transfer-in parents, make sure they're scheduled at
     // very end of the DAG so we can insert storage nodes between them and their parent
     for (int i = 0; i < dag->tails.size(); i++)
@@ -457,9 +389,7 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
         AssayNode *tOut = dag->tails.at(i);
         if (tOut->GetType() == TRANSFER_OUT)
         {
-            AssayNode *tIn = tOut->GetParents().front();
-            //if (tIn->GetType() == TRANSFER_IN)
-            //{
+            AssayNode *tIn = tOut->GetParents().front();\
             tOut->startTimeStep = tOut->endTimeStep = schedTS-1;
             tOut->status = SCHEDULED;
 
@@ -471,11 +401,8 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
                 store->endTimeStep = tOut->startTimeStep;
                 dag->InsertNode(tIn, tOut, store);
             }
-            //}
         }
     }
-
-
 
 
 	if (internalPriorities)

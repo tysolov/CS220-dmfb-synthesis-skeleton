@@ -1,4 +1,4 @@
-#import "../../Headers/Scheduler/cs220_scheduler.h"
+#include "../../Headers/Scheduler/cs220_scheduler.h"
 
 CS220Scheduler::CS220Scheduler()
 {

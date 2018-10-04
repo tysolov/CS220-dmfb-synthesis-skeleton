@@ -4,6 +4,8 @@ open source MFSimStatic project.
 
 This version of the project compiles assays represented by a CFG and independent DAGs for each basic block, with TRANSFER_IN instructions representing SSA phi nodes, and TRANSFER_OUT instructions representing SSI sigma nodes.
 
+This project has been verified to run appropriately on macOS >= 10.13, Ubuntu Linux 14.04 LTS, and Windows 10 (using the Linux Subsystem).  It should work as is on any environment where cmake and GCC or Clang is available.
+
 ### Requirements:
 - `git`
 - `cmake` 2.8 or later

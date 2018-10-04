@@ -24,6 +24,7 @@
 #include "fixed_module.h"
 #include "util.h"
 #include "io_port.h"
+#include <vector>
 
 class PinMapper;
 class WireRouter;

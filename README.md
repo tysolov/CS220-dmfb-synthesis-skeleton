@@ -38,3 +38,23 @@ Whichever synthesis step you are developing an algorithm for is accomplished
 at the DAG level--the engine takes care of control flow constructs for you.
 
 All output files are created for you, provided you follow the given APIs correctly.  Please refer to the provided scheduler/placer/router to view proper API usage.
+
+#### Understanding the .cfg and .dag files
+
+Although not necessary, as the files are parsed for you, understanding the input files may be of some help.
+
+- a `.cfg` file specifies a control flow graph for digital microfluidic lab-on-a-chips. It is organized as follows:
+  - the `NAME` property simply names the CFG, this has no bearing on execution
+  - all DAGs in the program are listed using the `DAG(<dagname>)` command.
+  - the `NUMCGS` property specifies the number of conditional groups (if/else blocks) present
+  - for each control group there are any number of `COND` commands
+    - `COND` (condition) commands have a variable number parameters: group number, number of dependent dags, comma-separated-list of dependent dags, number of branch dags, comma-separated-list of branch dags, expression ID
+  - for each `COND` command there are any number of `EXP` and `TD` commands
+    - `EXP` (expression) commands will match the condition's expression ID in the first parameter, followed by expression-type specific number of parameters.  The types of expressions are self-explanatory.
+    - `TD` (transfer droplet) commands provide control flow for individual droplets from a DAGfrom, nodeID to a DAGto, nodeID.
+    
+- a `.dag` file specifies the operations performed at the level of a basic block. 
+  - the `DagName` property names the dag for the `.cfg` file to find it.
+  - there are number of `NODE` commands, each followed by any number of `EDGE` commands
+    - a `NODE` specifies a fluidic operation to be performed.  Parameters include a node id, the type of operation, and operation-specific features such as time, volume, and/or name
+    - an `EDGE` specifies a dependency between nodes. Specifically, the ege `EDGE(i, j)` requires that node i completes before node j can begin.  It also signifies that node j _consumes_ node i

@@ -8,6 +8,14 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_CXX_STANDARD 11)
 
 include_directories(Headers)
+include_directories(Headers/Models)
+include_directories(Headers/PinMapper)
+include_directories(Headers/Placer)
+include_directories(Headers/Resources)
+include_directories(Headers/Router)
+include_directories(Headers/Scheduler)
+include_directories(Headers/Util)
+include_directories(Headers/WireRouter)
 
 set(CS220Synth_SOURCES
         Source/Models/assay_node.cc

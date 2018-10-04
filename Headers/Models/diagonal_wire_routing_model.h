@@ -27,11 +27,13 @@
 #ifndef DIAGONAL_WIRE_ROUTING_MODEL_H_
 #define DIAGONAL_WIRE_ROUTING_MODEL_H_
 
-#include "../Resources/structs.h"
-#include "Util/claim.h"
-#include "dmfb_arch.h"
+#include "structs.h"
+#include "claim.h"
 #include <vector>
 #include <limits>
+#include "dmfb_arch.h"
+#include "pin_mapper.h"
+
 using namespace std;
 
 class DmfbArch;

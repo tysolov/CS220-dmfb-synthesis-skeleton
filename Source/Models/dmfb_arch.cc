@@ -24,7 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Models/dmfb_arch.h"
+#include "dmfb_arch.h"
+#include <vector>
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Constructor

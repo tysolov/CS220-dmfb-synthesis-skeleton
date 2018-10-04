@@ -22,16 +22,14 @@
 #ifndef _SYNTHESIS_H
 #define _SYNTHESIS_H
 
-#include "Util/elapsed_timer.h"
-#include "Util/compatibility_check.h"
-#include "Models/dmfb_arch.h"
-#include "Resources/enums.h"
-#include "Models/dag.h"
-
-class Scheduler;
-class Placer;
-class Router;
-class WireRouter;
+#include "elapsed_timer.h"
+#include "compatibility_check.h"
+#include "dmfb_arch.h"
+#include "enums.h"
+#include "dag.h"
+#include "scheduler.h"
+#include "placer.h"
+#include "router.h"
 
 class Synthesis
 {

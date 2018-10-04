@@ -21,9 +21,9 @@
 #ifndef _PRIORITY_H
 #define _PRIORITY_H
 
-#include "../Models/dmfb_arch.h"
+#include "dmfb_arch.h"
 #include <functional>
-#include "../Models/dag.h"
+#include "dag.h"
 
 struct CompareNode : public std::binary_function<AssayNode*, AssayNode*, bool>
 {

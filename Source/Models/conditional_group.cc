@@ -24,7 +24,7 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Models/conditional_group.h"
+#include "conditional_group.h"
 
 /////////////////////////////////////////////////////////////////////
 // Constructor

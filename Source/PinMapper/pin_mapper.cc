@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/PinMapper/pin_mapper.h"
-#include "Util/claim.h"
+#include "pin_mapper.h"
+#include "claim.h"
 #include <set>
 
 ///////////////////////////////////////////////////////////////////////////////////

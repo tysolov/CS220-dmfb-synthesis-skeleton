@@ -24,7 +24,7 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Router/post_subprob_compact_router.h"
+#include "post_subprob_compact_router.h"
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Constructor

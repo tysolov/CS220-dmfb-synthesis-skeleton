@@ -21,16 +21,15 @@
 #ifndef _STRUCTS_H
 #define _STRUCTS_H
 
-//#include <ext/slist>
 #include <sstream>
 #include "enums.h"
 #include <vector>
 #include <string.h>
 #include <list>
 #include <map>
-#include "../Models/reconfig_module.h"
-#include "../Models/fixed_module.h"
-#include "../Models/expression.h"
+#include "reconfig_module.h"
+#include "fixed_module.h"
+#include "droplet.h"
 
 using namespace std;
 

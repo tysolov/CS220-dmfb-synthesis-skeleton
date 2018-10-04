@@ -21,8 +21,8 @@
 #ifndef WIRE_SEGMENT_H_
 #define WIRE_SEGMENT_H_
 
-#include "../Models/entity.h"
-#include "../Resources/enums.h"
+#include "entity.h"
+#include "enums.h"
 
 
 class WireSegment : Entity

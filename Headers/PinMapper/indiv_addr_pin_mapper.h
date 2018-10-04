@@ -26,8 +26,9 @@
 #ifndef INDIV_ADDR_PIN_MAPPER_H_
 #define INDIV_ADDR_PIN_MAPPER_H_
 
-#include "../Models/dmfb_arch.h"
+#include "dmfb_arch.h"
 #include "pin_mapper.h"
+#include "claim.h"
 
 class IndivAddrPinMapper : public PinMapper
 {

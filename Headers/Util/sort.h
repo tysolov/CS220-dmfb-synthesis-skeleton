@@ -24,15 +24,16 @@
 #ifndef _SORT_H
 #define _SORT_H
 
-#include "../Models/fixed_module.h"
-#include "../Models/reconfig_module.h"
-#include "../Models/assay_node.h"
-#include "../Resources/structs.h"
-#include "../WireRouter/paths.h"
+#include "fixed_module.h"
+#include "reconfig_module.h"
+#include "assay_node.h"
+#include "structs.h"
+#include "paths.h"
 #include <algorithm>
 #include <vector>
 #include <list>
 #include <map>
+#include "diagonal_wire_routing_model.h"
 
 struct VirtualDroplet;
 struct AssayPathNode;

@@ -26,15 +26,16 @@
 #ifndef _ROUTER_H_
 #define _ROUTER_H_
 
-#include "../Models/dmfb_arch.h"
-#include "../Models/droplet.h"
-#include "../Resources/structs.h"
-#include "Util/claim.h"
-#include "../Util/sort.h"
-#include "../Util/analyze.h"
+#include "dmfb_arch.h"
+#include "droplet.h"
+#include "structs.h"
+#include "claim.h"
+#include "sort.h"
 #include <vector>
 #include <map>
 #include <algorithm>
+#include "pin_mapper.h"
+#include "dag.h"
 
 class ReconfigModule;
 class DAG;

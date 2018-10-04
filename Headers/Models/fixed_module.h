@@ -21,8 +21,8 @@
 #ifndef _FIXED_MODULE_H
 #define _FIXED_MODULE_H
 
-#include "../Models/entity.h"
-#include "../Resources/enums.h"
+#include "entity.h"
+#include "enums.h"
 
 class FixedModule : public Entity
 {

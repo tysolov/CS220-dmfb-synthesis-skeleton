@@ -24,7 +24,7 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Models/droplet.h"
+#include "droplet.h"
 
 int Droplet::next_id = 1;
 //int Droplet::HP_INIT = 1000;

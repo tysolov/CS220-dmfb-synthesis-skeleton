@@ -2,7 +2,7 @@
  * Implement your placement algorithm here!
  */
 
-#include "../../Headers/Placer/cs220_placer.h"
+#include "cs220_placer.h"
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Constructor

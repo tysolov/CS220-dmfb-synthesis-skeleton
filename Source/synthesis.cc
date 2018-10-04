@@ -24,31 +24,31 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../Headers/synthesis.h"
+#include "synthesis.h"
 
-#include "../Headers/Util/file_out.h"
-#include "../Headers/Util/file_in.h"
-#include "../Headers/Util/analyze.h"
+#include "file_out.h"
+#include "file_in.h"
+#include "analyze.h"
 
-#include "../Headers/Scheduler/cs220_scheduler.h"
-#include "../Headers/Scheduler/list_scheduler.h"
-#include "../Headers/Scheduler/scheduler.h"
+#include "cs220_scheduler.h"
+#include "list_scheduler.h"
+#include "scheduler.h"
 
-#include "../Headers/Placer/cs220_placer.h"
-#include "../Headers/Placer/grissom_left_edge_binder.h"
-#include "../Headers/Placer/placer.h"
+#include "cs220_placer.h"
+#include "grissom_left_edge_binder.h"
+#include "placer.h"
 
-#include "../Headers/Router/cs220_router.h"
-#include "../Headers/Router/roy_maze_router.h"
-#include "../Headers/Router/router.h"
+#include "cs220_router.h"
+#include "roy_maze_router.h"
+#include "router.h"
 
-//#include "../Headers/WireRoute/cs220_wire_router.h"
-#include "../Headers/WireRouter/path_finder_wire_router.h"
-#include "../Headers/WireRouter/wire_router.h"
+//#include "cs220_wire_router.h"
+#include "path_finder_wire_router.h"
+#include "wire_router.h"
 
-//#include "../Headers/PinMapper/cs220_pin_mapper.h"
-#include "../Headers/PinMapper/indiv_addr_pin_mapper.h"
-#include "../Headers/PinMapper/pin_mapper.h"
+//#include "cs220_pin_mapper.h"
+#include "indiv_addr_pin_mapper.h"
+#include "pin_mapper.h"
 
 
 ///////////////////////////////////////////////////////////////

@@ -22,17 +22,13 @@
 #ifndef _FILE_IN_H
 #define _FILE_IN_H
 
-#include "../Models/dmfb_arch.h"
-#include "../Scheduler/scheduler.h"
-#include "../Placer/placer.h"
-#include "../Router/router.h"
-#include "command_line.h"
-#include "../synthesis.h"
+#include "synthesis.h"
 #include <fstream>
 #include <string>
 #include "sort.h"
-#include "../Models/dag.h"
-#include "../Models/cfg.h"
+#include "cfg.h"
+#include "command_line.h"
+
 using namespace std;
 
 class Scheduler;

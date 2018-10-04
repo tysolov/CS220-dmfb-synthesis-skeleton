@@ -24,7 +24,7 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Models/assay_node.h"
+#include "dag.h"
 
 int AssayNode::next_id = 1;
 

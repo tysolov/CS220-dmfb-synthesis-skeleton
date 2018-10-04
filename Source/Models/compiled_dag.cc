@@ -24,10 +24,10 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Models/compiled_dag.h"
-#include "../../Headers/Scheduler/scheduler.h"
-#include "../../Headers/Util/analyze.h"
-#include "../../Headers/Util/file_out.h"
+#include "compiled_dag.h"
+#include "scheduler.h"
+#include "analyze.h"
+#include "file_out.h"
 
 class Analyze;
 

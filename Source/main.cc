@@ -33,15 +33,16 @@
 #ifndef _MAIN
 #define _MAIN
 
-#include "../Headers/synthesis.h"
-#include "../Headers/Resources/enums.h"
-#include "Util/compatibility_check.h"
+#include "synthesis.h"
+#include "enums.h"
+#include "compatibility_check.h"
 #include <math.h>
 #include <stdio.h>
 #include <dirent.h>
-#include "../Headers/Models/compiled_cfg.h"
-#include "../Headers/Models/cfg.h"
-#include "../Headers/Util/file_out.h"
+#include "compiled_cfg.h"
+#include "cfg.h"
+#include "file_out.h"
+#include "file_in.h"
 
 using namespace std;
 

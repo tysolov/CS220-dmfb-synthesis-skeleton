@@ -21,8 +21,8 @@
 #ifndef _IO_PORT_H
 #define _IO_PORT_H
 
-#include "../Models/entity.h"
-#include "../Resources/enums.h"
+#include "entity.h"
+#include "enums.h"
 #include <string>
 
 using namespace std;

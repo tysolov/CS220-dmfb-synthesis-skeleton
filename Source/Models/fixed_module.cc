@@ -24,7 +24,7 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Models/fixed_module.h"
+#include "fixed_module.h"
 
 int FixedModule::next_id = 1;
 

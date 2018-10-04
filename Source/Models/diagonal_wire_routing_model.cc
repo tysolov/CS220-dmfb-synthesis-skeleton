@@ -25,9 +25,10 @@
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
 
-#include "../../Headers/Models/diagonal_wire_routing_model.h"
+#include "diagonal_wire_routing_model.h"
 #include <sys/time.h>
 #include <math.h>
+#include "wire_router.h"
 
 int DiagonalWireRoutingModel::next_id = 0;
 ///////////////////////////////////////////////////////////////////////////////////

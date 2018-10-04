@@ -29,7 +29,7 @@
 #define _PATHFINDER_PATHS_H_
 
 #include <vector>
-#include "../Resources/structs.h"
+#include "structs.h"
 
 struct WireRouteNode;
 

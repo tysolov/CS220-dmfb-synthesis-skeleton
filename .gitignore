@@ -12,6 +12,6 @@
 *.o
 *.includecache
 
-cmake-build-debug/*
+cmake-build*
 
 CS220Synth

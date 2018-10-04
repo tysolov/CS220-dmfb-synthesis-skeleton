@@ -25,8 +25,8 @@
 #define HEADERS_MODELS_COMPILED_CFG_H_
 
 #include "cfg.h"
-#include "../../Headers/Models/compiled_dag.h"
-#include "../synthesis.h"
+#include "compiled_dag.h"
+#include "synthesis.h"
 
 class CompiledCFG
 {

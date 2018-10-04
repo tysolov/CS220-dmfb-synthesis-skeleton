@@ -24,7 +24,7 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/WireRouter/wire_segment.h"
+#include "wire_segment.h"
 
 #include <cmath>
 #include <math.h>

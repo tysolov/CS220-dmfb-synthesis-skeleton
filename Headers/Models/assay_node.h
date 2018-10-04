@@ -22,18 +22,15 @@
 #ifndef _ASSAY_NODE_H
 #define _ASSAY_NODE_H
 
-
-#include "reconfig_module.h"
 #include "fixed_module.h"
 #include "io_port.h"
 #include "droplet.h"
 #include <iostream>
 #include <cstdlib>
 #include "entity.h"
-#include "../Resources/enums.h"
+#include "enums.h"
 #include <vector>
 #include <string>
-#include "dag.h"
 #include <list>
 #include <map>
 

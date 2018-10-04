@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/PinMapper/indiv_addr_pin_mapper.h"
-#include "../../Headers/Util/sort.h"
+#include "indiv_addr_pin_mapper.h"
+#include "sort.h"
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Constructors

@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Util/sort.h"
-#include "../../Headers/WireRouter/wire_router.h" // DTG
+#include "sort.h"
+#include "wire_router.h" // DTG
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Constructor

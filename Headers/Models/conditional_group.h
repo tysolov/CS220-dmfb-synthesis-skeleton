@@ -27,16 +27,16 @@
 #ifndef _CONDITIONAL_GROUP_H
 #define _CONDITIONAL_GROUP_H
 
-#include "../Resources/enums.h"
-#include "Util/claim.h"
-#include "../Resources/structs.h"
-#include "../Util/sort.h"
-#include "../Resources/structs.h"
+#include "enums.h"
+#include "claim.h"
+#include "structs.h"
+#include "sort.h"
+#include "structs.h"
+#include "expression.h"
 
 struct Condition;
 struct TransferEdge;
 class DAG;
-class Expression;
 
 /////////////////////////////////////////////////////////////////
 // ConditionalGroup: Contains the boolean statements

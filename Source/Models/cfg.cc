@@ -24,8 +24,9 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Models/cfg.h"
+#include "cfg.h"
 #include <fstream>
+#include "expression.h"
 
 CFG::CFG()
 {

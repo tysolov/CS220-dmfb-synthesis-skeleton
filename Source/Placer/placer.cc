@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Placer/placer.h"
-#include "../../Headers/Util/sort.h"
+#include "placer.h"
+#include "sort.h"
 #include <math.h>
 
 ///////////////////////////////////////////////////////////////////////////////////

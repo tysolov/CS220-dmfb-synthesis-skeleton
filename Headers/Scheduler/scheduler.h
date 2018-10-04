@@ -26,11 +26,13 @@
 #ifndef SCHEDULER_H_
 #define SCHEDULER_H_
 
-#include "../Models/dmfb_arch.h"
+#include "dmfb_arch.h"
 #include <string.h>
-#include "../Resources/structs.h"
-#include "Util/claim.h"
-#include "../Resources/enums.h"
+#include "structs.h"
+#include "claim.h"
+#include "enums.h"
+#include "pin_mapper.h"
+#include "dag.h"
 
 class DmfbArch;
 class DAG;

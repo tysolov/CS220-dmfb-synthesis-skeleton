@@ -1,7 +1,7 @@
 #ifndef _CS220_PLACER_H_
 #define _CS220_PLACER_H_
 
-#include "../Resources/enums.h"
+#include "enums.h"
 #include "placer.h"
 #include <vector>
 

@@ -21,12 +21,9 @@
 #ifndef _DMFB_ARCH_H
 #define _DMFB_ARCH_H
 
-#include "../PinMapper/pin_mapper.h"
-#include "../WireRouter/wire_router.h"
 #include "fixed_module.h"
-#include "../Util/util.h"
+#include "util.h"
 #include "io_port.h"
-//#include <vector>
 
 class PinMapper;
 class WireRouter;

@@ -28,17 +28,14 @@
 #ifndef _FILE_OUT_H
 #define _FILE_OUT_H
 
-#include "../Models/dmfb_arch.h"
-#include "../Scheduler/scheduler.h"
-#include "../Placer/placer.h"
-#include "../Router/router.h"
 #include "command_line.h"
-#include "../synthesis.h"
+#include "synthesis.h"
 #include <fstream>
 #include <string>
 #include "sort.h"
-#include "../Models/dag.h"
-#include "../Models/cfg.h"
+#include "dag.h"
+#include "cfg.h"
+
 using namespace std;
 
 class Scheduler;

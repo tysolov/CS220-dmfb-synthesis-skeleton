@@ -2,7 +2,7 @@
 // Created by Tyson Loveless on 8/20/18.
 //
 
-#include "../../Headers/Models/operation_coalescing_pool.h"
+#include "operation_coalescing_pool.h"
 
 CoalescingPool::CoalescingPool()
 {

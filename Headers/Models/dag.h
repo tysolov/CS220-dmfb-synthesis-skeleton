@@ -22,17 +22,16 @@
 #define _DAG_H
 
 #include "assay_node.h"
-#include "../Resources/enums.h"
-#include "Util/claim.h"
-#include "../Models/conditional_group.h"
+#include "enums.h"
+#include "claim.h"
 #include <stdio.h>
 #include <vector>
 #include <math.h>
 #include <map>
+#include "reconfig_module.h"
 
 using namespace std;
 
-class AssayNode;
 class ConditionalGroup;
 
 class DAG : public Entity

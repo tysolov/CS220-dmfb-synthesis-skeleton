@@ -26,11 +26,14 @@
 #ifndef PLACER_H_
 #define PLACER_H_
 
-#include "../Models/dmfb_arch.h"
-#include "Util/claim.h"
+#include "dmfb_arch.h"
+#include "claim.h"
 #include <unordered_set>
 #include <unordered_map>
-#include "../Models/operation_coalescing_pool.h"
+#include "operation_coalescing_pool.h"
+#include "structs.h"
+#include "dag.h"
+#include "pin_mapper.h"
 
 class DAG;
 

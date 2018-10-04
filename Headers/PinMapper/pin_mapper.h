@@ -26,16 +26,15 @@
 #ifndef PIN_MAPPER_H_
 #define PIN_MAPPER_H_
 
-#include "../Models/fixed_module.h"
-#include "../Models/dmfb_arch.h"
-#include "../Models/droplet.h"
-#include "../Resources/structs.h"
+#include "fixed_module.h"
+#include "droplet.h"
+#include "structs.h"
 #include <vector>
 #include <map>
+#include "dmfb_arch.h"
+
 using std::vector;
 using std::map;
-
-class DmfbArch;
 
 class PinMapper
 {

@@ -29,8 +29,8 @@
 #define _EXPRESSION_H
 
 #include "assay_node.h"
-#include "../Resources/enums.h"
-#include "Util/claim.h"
+#include "enums.h"
+#include "claim.h"
 #include "dag.h"
 #include "entity.h"
 

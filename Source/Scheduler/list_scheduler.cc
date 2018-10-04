@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Scheduler/list_scheduler.h"
-#include "../../Headers/Util/sort.h"
+#include "list_scheduler.h"
+#include "sort.h"
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Constructor

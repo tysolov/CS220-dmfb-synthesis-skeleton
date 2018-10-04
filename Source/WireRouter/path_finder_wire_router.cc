@@ -25,10 +25,10 @@
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
 
-#include "../../Headers/WireRouter/path_finder_wire_router.h"
-#include "../../Headers/WireRouter/paths.h"
-#include "../../Headers/Util/file_out.h"
-#include "../../Headers/Util/sort.h"
+#include "path_finder_wire_router.h"
+#include "paths.h"
+#include "file_out.h"
+#include "sort.h"
 #include <algorithm>
 
 ///////////////////////////////////////////////////////////////////////////////////

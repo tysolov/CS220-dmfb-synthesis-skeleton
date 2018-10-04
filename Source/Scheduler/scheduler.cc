@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Scheduler/scheduler.h"
-#include "../../Headers/Models/dag.h"
+#include "scheduler.h"
+#include "dag.h"
 #include <math.h>
 
 ///////////////////////////////////////////////////////////////////////////////////

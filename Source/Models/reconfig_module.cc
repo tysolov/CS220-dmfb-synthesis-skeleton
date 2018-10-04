@@ -24,8 +24,7 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Models/reconfig_module.h"
-//#include "../../Headers/Models/assay_node.h"
+#include "reconfig_module.h"
 
 int ReconfigModule::next_id = 1;
 

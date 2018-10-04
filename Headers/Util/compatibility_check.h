@@ -25,6 +25,8 @@
 #ifndef COMPATIBILITY_CHECK_H_
 #define COMPATIBILITY_CHECK_H_
 
+#include "wire_router.h"
+
 class DmfbArch;
 class Scheduler;
 class Placer;

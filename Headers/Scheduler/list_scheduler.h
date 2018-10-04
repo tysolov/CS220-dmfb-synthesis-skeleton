@@ -37,7 +37,7 @@
 
 #include "scheduler.h"
 #include "priority.h"
-#include "../Util/util.h"
+#include "util.h"
 #include <math.h>
 
 class AssayNode;

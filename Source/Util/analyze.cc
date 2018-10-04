@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Util/analyze.h"
-#include "../../Headers/Util/sort.h"
+#include "analyze.h"
+#include "sort.h"
 #include <algorithm>
 
 ///////////////////////////////////////////////////////////////////////////////////

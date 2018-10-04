@@ -21,8 +21,8 @@
 #ifndef FREE_MODULE_H_
 #define FREE_MODULE_H_
 
-#include "../Models/entity.h"
-#include "../Resources/enums.h"
+#include "entity.h"
+#include "enums.h"
 
 class OpModule : public Entity
 {

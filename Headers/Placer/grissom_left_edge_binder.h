@@ -29,10 +29,10 @@
 #ifndef GRISSOM_LEFT_EDGE_BINDER_H_
 #define GRISSOM_LEFT_EDGE_BINDER_H_
 
-#include "../Resources/enums.h"
+#include "enums.h"
 #include "placer.h"
 #include <vector>
-#include "../Models/operation_coalescing_pool.h"
+#include "operation_coalescing_pool.h"
 
 class FixedModule;
 

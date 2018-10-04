@@ -26,17 +26,15 @@
 #ifndef WIRE_ROTUER_H_
 #define WIRE_ROTUER_H_
 
-#include "../Models/diagonal_wire_routing_model.h"
-#include "../Models/dmfb_arch.h"
-#include "../Resources/structs.h"
+#include "dmfb_arch.h"
+#include "structs.h"
 #include "paths.h"
 #include "wire_segment.h"
 #include <vector>
+#include "claim.h"
+#include "diagonal_wire_routing_model.h"
 
 using std::vector;
-
-class DiagonalWireRoutingModel;
-class DmfbArch;
 
 class WireRouter
 {

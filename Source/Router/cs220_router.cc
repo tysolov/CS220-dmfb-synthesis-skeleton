@@ -2,7 +2,7 @@
  * Implement your routing algorithm here!
  */
 
-#include "../../Headers/Router/cs220_router.h"
+#include "cs220_router.h"
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Constructors

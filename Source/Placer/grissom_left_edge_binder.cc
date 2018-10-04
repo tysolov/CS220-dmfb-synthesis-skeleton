@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Placer/grissom_left_edge_binder.h"
-#include "../../Headers/Util/sort.h"
+#include "grissom_left_edge_binder.h"
+#include "sort.h"
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Constructor

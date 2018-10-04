@@ -36,12 +36,11 @@
 #ifndef ROY_MAZE_ROUTER_H_
 #define ROY_MAZE_ROUTER_H_
 
-#include "Util/elapsed_timer.h"
+#include "elapsed_timer.h"
 #include "post_subprob_compact_router.h"
-#include "../Resources/enums.h"
+#include "enums.h"
 #include <stack>
 #include <set>
-//#include <vector>
 
 //enum SoukupC { NotReached = 0, LeeReached = 1, LineReached = 2 };
 //enum SoukupS { OtherLayer = 0, LeftT = 1, RightT = 2, DownT = 3, UpT = 4, StartPoint = 5, TargetPoint = 6, Blockage = 7, UnknownS = 100};

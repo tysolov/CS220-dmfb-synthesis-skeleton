@@ -24,11 +24,8 @@
  * TL		10/02/18	Refactored for CS220									*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Models/compiled_cfg.h"
-#include "../../Headers/Util/file_out.h"
-#include <time.h>
-#include <unordered_map>
-#include <unordered_set>
+#include "compiled_cfg.h"
+#include "file_out.h"
 
 /////////////////////////////////////////////////////////////////////////////////
 // CompiledCFG Constructor/Destructor
@@ -495,7 +492,8 @@ void CompiledCFG::dynamicallyExecute()
 	cout << "-----------------------------------------------" << endl;
 	cout << "Total pin activations for CFG:  " << totalPinActivations << endl;
 	cout << "Total scheduled time-steps: " << totalTS << " (" << (totalTS * synthesisEngine->getArch()->getSecPerTS()) << " seconds)" << endl;
-	cout << "Total execution cycles (actual-time): " << totalCycles << " (" << (totalCycles / synthesisEngine->getArch()->getFreqInHz()) << " seconds)" << endl;
+	cout << "Total routing time-steps: " << totalCycles / synthesisEngine->getArch()->getFreqInHz() - totalTS << " (" << (totalCycles / synthesisEngine->getArch()->getFreqInHz()) - (totalTS * synthesisEngine->getArch()->getSecPerTS()) << " seconds)" << endl;
+	cout << "Total execution cycles (scheduled + routing): " << totalCycles << " (" << (totalCycles / synthesisEngine->getArch()->getFreqInHz()) << " seconds)" << endl;
 	cout << seedMsg << endl;
 }
 

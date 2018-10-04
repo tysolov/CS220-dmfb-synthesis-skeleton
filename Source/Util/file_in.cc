@@ -24,8 +24,8 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Util/file_in.h"
-#include "../../Headers/Util/util.h"
+#include "file_in.h"
+#include "util.h"
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Constructor

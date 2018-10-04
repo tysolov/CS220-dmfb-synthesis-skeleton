@@ -23,8 +23,9 @@
 #ifndef COMMAND_LINE_H_
 #define COMMAND_LINE_H_
 
-#include "Util/file_in.h"
 #include <string>
+#include <vector>
+#include "enums.h"
 
 class CmdLine
 {
@@ -41,53 +42,53 @@ class CmdLine
 		friend class FileIn;
 
 	private:
-		string GetUsageString();
-		string GetSchedulerLibrary();
-		int GetLibIndexFromSchedKey(string sKey);
-		int GetLibIndexFromPlaceKey(string pKey);
-		int GetLibIndexFromRouteKey(string rKey);
-		int GetLibIndexFromResourceAllocationKey(string raKey);
-		int GetLibIndexFromPinMapKey(string pmKey);
-		int GetLibIndexFromCompKey(string cKey);
-		int GetLibIndexFromPeKey(string peKey);
-		int GetLibIndexFromEtKey(string etKey);
-		int GetLibIndexFromWrKey(string wrKey);
+		std::string GetUsageString();
+		std::string GetSchedulerLibrary();
+		int GetLibIndexFromSchedKey(std::string sKey);
+		int GetLibIndexFromPlaceKey(std::string pKey);
+		int GetLibIndexFromRouteKey(std::string rKey);
+		int GetLibIndexFromResourceAllocationKey(std::string raKey);
+		int GetLibIndexFromPinMapKey(std::string pmKey);
+		int GetLibIndexFromCompKey(std::string cKey);
+		int GetLibIndexFromPeKey(std::string peKey);
+		int GetLibIndexFromEtKey(std::string etKey);
+		int GetLibIndexFromWrKey(std::string wrKey);
 
-		vector<string> sKeys; 		// The command-line key for a scheduler
-		vector<string> sDescrips;	// Description/name of scheduler
-		vector<SchedulerType> sEnums;// Enum-type of scheduler
+		std::vector<std::string> sKeys; 		// The command-line key for a scheduler
+		std::vector<std::string> sDescrips;	// Description/name of scheduler
+		std::vector<SchedulerType> sEnums;// Enum-type of scheduler
 
-		vector<string> pKeys; 		// The command-line key for a placer
-		vector<string> pDescrips;	// Description/name of placer
-		vector<PlacerType> pEnums;	// Enum-type of placer
+		std::vector<std::string> pKeys; 		// The command-line key for a placer
+		std::vector<std::string> pDescrips;	// Description/name of placer
+		std::vector<PlacerType> pEnums;	// Enum-type of placer
 
-		vector<string> rKeys; 		// The command-line key for a router
-		vector<string> rDescrips;	// Description/name of router
-		vector<RouterType> rEnums;	// Enum-type of router
+		std::vector<std::string> rKeys; 		// The command-line key for a router
+		std::vector<std::string> rDescrips;	// Description/name of router
+		std::vector<RouterType> rEnums;	// Enum-type of router
 
-		vector<string> raKeys; 		// The command-line key for a resource-allocator
-		vector<string> raDescrips;	// Description/name of resource-allocator
-		vector<ResourceAllocationType> raEnums;	// Enum-type of resource-allocator
+		std::vector<std::string> raKeys; 		// The command-line key for a resource-allocator
+		std::vector<std::string> raDescrips;	// Description/name of resource-allocator
+		std::vector<ResourceAllocationType> raEnums;	// Enum-type of resource-allocator
 
-		vector<string> pmKeys; 		// The command-line key for a pin-mapper
-		vector<string> pmDescrips;	// Description/name of pin-mapper
-		vector<PinMapType> pmEnums;	// Enum-type of pin-mapper
+		std::vector<std::string> pmKeys; 		// The command-line key for a pin-mapper
+		std::vector<std::string> pmDescrips;	// Description/name of pin-mapper
+		std::vector<PinMapType> pmEnums;	// Enum-type of pin-mapper
 
-		vector<string> wrKeys; 		// The command-line key for a wire-router
-		vector<string> wrDescrips;	// Description/name of wire-router
-		vector<WireRouteType> wrEnums;	// Enum-type of wire-router
+		std::vector<std::string> wrKeys; 		// The command-line key for a wire-router
+		std::vector<std::string> wrDescrips;	// Description/name of wire-router
+		std::vector<WireRouteType> wrEnums;	// Enum-type of wire-router
 
-		vector<string> cKeys; 		// The command-line key for a compaction
-		vector<string> cDescrips;	// Description/name of compaction type
-		vector<CompactionType> cEnums;	// Enum-type of compaction
+		std::vector<std::string> cKeys; 		// The command-line key for a compaction
+		std::vector<std::string> cDescrips;	// Description/name of compaction type
+		std::vector<CompactionType> cEnums;	// Enum-type of compaction
 
-		vector<string> peKeys; 		// The command-line key for the time-step processing engine
-		vector<string> peDescrips;	// Description/name of time-step processing engine
-		vector<ProcessEngineType> peEnums;	// Enum-type of time-step processing
+		std::vector<std::string> peKeys; 		// The command-line key for the time-step processing engine
+		std::vector<std::string> peDescrips;	// Description/name of time-step processing engine
+		std::vector<ProcessEngineType> peEnums;	// Enum-type of time-step processing
 
-		vector<string> etKeys; 		// The command-line key for the execution type
-		vector<string> etDescrips;	// Description/name of execution type
-		vector<ExecutionType> etEnums;	// Enum-type of execution type
+		std::vector<std::string> etKeys; 		// The command-line key for the execution type
+		std::vector<std::string> etDescrips;	// Description/name of execution type
+		std::vector<ExecutionType> etEnums;	// Enum-type of execution type
 };
 
 

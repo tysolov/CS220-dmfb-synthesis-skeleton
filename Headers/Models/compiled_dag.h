@@ -25,11 +25,11 @@
 #define HEADERS_MODELS_COMPILED_DAG_H_
 
 #include "dag.h"
-#include "../synthesis.h"
-//#include "adjacency_matrix.h"
+#include "synthesis.h"
 #include <unordered_set>
 #include <unordered_map>
 #include "operation_coalescing_pool.h"
+#include "conditional_group.h"
 
 class CompiledDAG
 {

@@ -24,8 +24,7 @@
  * ---		----		----													*
  * FML		MM/DD/YY	One-line description									*
  *-----------------------------------------------------------------------------*/
-#include "../../Headers/Models/dag.h"
-#include <string>
+#include "dag.h"
 #include <fstream>
 #include <set>
 

@@ -22,9 +22,8 @@
 #ifndef _RECONFIG_MODULE_H
 #define _RECONFIG_MODULE_H
 
-#include "../Models/entity.h"
-#include "../Resources/enums.h"
-#include "../Models/assay_node.h"
+#include "entity.h"
+#include "enums.h"
 
 class AssayNode;
 

@@ -12,13 +12,13 @@ This project has been verified to run appropriately on macOS >= 10.13, Ubuntu Li
 - `C++11` or later (if you use > `C++11` features, update the `CMakeLists.txt` file to require the later version to avoid warnings/errors)
 
 ## Getting started:
-- Clone or fork this repo `$ git clone https://github.com/tlove004/CS220-dmfb-synthesis-skeleton.git`
-- Edit the `CMakeLists.txt` file to set the path variable `YourPath` to the root of the project:
+1. Clone or fork this repo `$ git clone https://github.com/tlove004/CS220-dmfb-synthesis-skeleton.git`
+1. Edit the `CMakeLists.txt` file to set the path variable `YourPath` to the root of the project:
     - e.g. if you clone the directory to your home directory `~/`, you could set the variable `YourPath` to `~/CS220-dmfb-synthesis-skeleton/`
 
-- Create a build directory and generate the Makefiles 
+1. Create a build directory and generate the Makefiles 
     ```$ mkdir build && cd build && cmake ..```
-- Build the project `$ make`
+1. Build the project `$ make`
 
 You should now have an executable source file `CS220Synth` that should synthesize the default experiment (PCR) with the default synthesis algorithms.
 

@@ -60,3 +60,19 @@ Although not necessary, as the files are parsed for you, understanding the input
   - there are number of `NODE` commands, each followed by any number of `EDGE` commands
     - a `NODE` specifies a fluidic operation to be performed.  Parameters include a node id, the type of operation, and operation-specific features such as time, volume, and/or name
     - an `EDGE` specifies a dependency between nodes. Specifically, the ege `EDGE(i, j)` requires that node i completes before node j can begin.  It also signifies that node j _consumes_ node i
+    
+#### Resources:
+
+For each synthesis step, we have provided a default algorithm for you to compare against.  For more on these algorithms, refer to the following:
+
+- Scheduling [list scheduler]
+  - F. Su and K. Chakrabarty. "High-level synthesis of digital microfluidic biochips," ACM J. Emerging Tech. Comput. Syst., vol. 3, no. 4, pp. 16.1- 16.32, Jan. 2008.
+  - O'Neal, Kenneth, Daniel Grissom, and Philip Brisk. "Force-directed list scheduling for digital microfluidic biochips." In VLSI and System-on-Chip (VLSI-SoC), 2012 IEEE/IFIP 20th International Conference on, pp. 6-pp. IEEE, 2012.
+  
+- Placement [left edge binder and the virtual topology]
+  - Grissom, Daniel, and Philip Brisk. "Fast online synthesis of generally programmable digital microfluidic biochips." In Proceedings of the eighth IEEE/ACM/IFIP international conference on Hardware/software codesign and system synthesis, pp. 413-422. ACM, 2012.
+  - Grissom, Daniel T., and Philip Brisk. "Fast online synthesis of digital microfluidic biochips." IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems 33, no. 3 (2014): 356-369.
+  
+- Routing [roy maze router]
+  - Roy, Pranab, Hafizur Rahaman, and Parthasarathi Dasgupta. "A novel droplet routing algorithm for digital microfluidic biochips." In Proceedings of the 20th symposium on Great lakes symposium on VLSI, pp. 441-446. ACM, 2010.
+  - Soukup, J. I. R. I. "Fast maze router." In Proceedings of the 15th Design Automation Conference, pp. 100-102. IEEE Press, 1978.

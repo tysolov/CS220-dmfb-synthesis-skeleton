@@ -25,12 +25,12 @@ You should now have an executable source file `CS220Synth` that should synthesiz
 A basic scheduler `list_scheduler`, placer `grissom_left_edge_binder`, and router `roy_maze_router` have been included 
 for reference on API usage.  Reported results (in your final submission) should compare against the given synthesis algorithms.
 
-#### Troubleshooting tips:
+## Troubleshooting tips:
 - Use an IDE!  This is a large project, with a lot of dependencies, and the ability to quickly visualize the structure in an IDE will make your life a lot easier.  CLion (https://www.jetbrains.com/clion/) is my recommendation, and is free for all students with a ucr.edu email account.  Also, the built in visual debugger is fantastic.
 - If you are having issues with source files not showing up during your build, do not forget that you must add these sources to `CMakeLists.txt`.  Header files must be discoverable via the `include_directories` command, and source files should be set in the `set(CS220Synth_SOURCES ....)` section.
 - Certain data structures, in certain situations, do not reveal their contents in `gdb`, but work fine in `lldb`, and vice-versa.  If you are having trouble viewing data structures during debugging, try a different compiler/debugger pair.
 
-#### General nodes:
+## General notes:
 All input files (CFG and DAGs) are parsed for you. Placeholder classes have been created for you at:
 - Scheduler: `Headers/Scheduler/cs220_scheduler.h` and `Source/Scheduler/cs220_scheduler.cc`
 - Placer: `Headers/Placer/cs220_placer.h` and `Source/Placer/cs220_placer.cc`
@@ -41,7 +41,7 @@ at the DAG level--the engine takes care of control flow constructs for you.
 
 All output files are created for you, provided you follow the given APIs correctly.  Please refer to the provided scheduler/placer/router to view proper API usage.
 
-#### Understanding the .cfg and .dag files
+### Understanding the .cfg and .dag files
 
 Although not necessary, as the files are parsed for you, understanding the input files may be of some help.
 
@@ -61,7 +61,7 @@ Although not necessary, as the files are parsed for you, understanding the input
     - a `NODE` specifies a fluidic operation to be performed.  Parameters include a node id, the type of operation, and operation-specific features such as time, volume, and/or name
     - an `EDGE` specifies a dependency between nodes. Specifically, the ege `EDGE(i, j)` requires that node i completes before node j can begin.  It also signifies that node j _consumes_ node i
     
-#### Resources:
+## Resources:
 
 For each synthesis step, we have provided a default algorithm for you to compare against.  For more on these algorithms, refer to the following:
 

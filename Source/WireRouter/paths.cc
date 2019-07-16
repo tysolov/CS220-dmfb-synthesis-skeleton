@@ -144,7 +144,7 @@ void Path::printPath()
 {
 	if (path.empty())
 	{
-		std::cerr << ERROR "Path empty.\n";
+		std::cerr << ERRORL "Path empty.\n";
 		return;
 	}
 	vector<PathSegment*> current_level;

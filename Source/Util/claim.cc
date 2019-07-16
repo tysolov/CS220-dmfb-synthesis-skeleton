@@ -36,7 +36,7 @@ void claim(bool b, string msg)
 	//if (msg[msg.length()-1] != '\n')
 	//	msg = msg + "\n";
 	if(!b) {
-		cerr << ERROR << msg;
+		cerr << ERRORL << msg;
 		exit(1);
 	}
 }
@@ -45,7 +45,7 @@ void claim(bool b, stringstream *msg)
 	//if (msg->str()[msg->str().length()-1] != '\n')
 	//	*msg << endl;
 	if(!b) {
-		cerr << ERROR << msg->str();
+		cerr << ERRORL << msg->str();
 		exit(1);
 	}
 }

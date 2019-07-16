@@ -193,7 +193,7 @@ string AssayNode::GetSummary()
 				ss << " Heating/Detecting Module";
 				break;
 			default:
-				//cerr << endl << ERROR "UNKNOWN RESOURCE TYPE" << endl;
+				//cerr << endl << ERRORL "UNKNOWN RESOURCE TYPE" << endl;
 				//exit(1);
 				ss << " Unknown Res Type";
 				break;

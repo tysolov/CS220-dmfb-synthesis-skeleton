@@ -22,7 +22,7 @@
 #define _ENUMS_H
 
 #define LOGGER "\033[1;32m"
-#define ERROR "\033[1;31m"
+#define ERRORL "\033[1;31m"
 
 // General Types
 enum Direction { EAST, WEST, NORTH, SOUTH, ON_TARGET, DIR_UNINIT };

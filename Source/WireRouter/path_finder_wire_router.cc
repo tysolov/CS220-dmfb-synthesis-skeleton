@@ -311,7 +311,7 @@ void PathFinderWireRouter::layeredPathfinder(DiagonalWireRoutingModel* model)
 		}
 		if (kCleanRoute)
 		{
-			cerr << ERROR "Cleaning up layer " << layer_number << "..." << endl;
+			cerr << ERRORL "Cleaning up layer " << layer_number << "..." << endl;
 			layers.pop_back();
 
 			clearHistory(&allNodes);
@@ -414,7 +414,7 @@ void PathFinderWireRouter::pathfinder(vector<WireRouteNode*> allNodes, map<int, 
 				} else {
 					if (allowFails) {
 						current_layer.push_back((*path_iter));
-						cerr << ERROR "Pin " << (*path_iter)->getPinNumber() << " fails." << endl;
+						cerr << ERRORL "Pin " << (*path_iter)->getPinNumber() << " fails." << endl;
 					}
 				}
 
@@ -477,7 +477,7 @@ void PathFinderWireRouter::pathfinder(vector<WireRouteNode*> allNodes, map<int, 
 				delete new_path;
 				// end of changes
 				failed_routes++;
-				std::cerr << ERROR "Error: Pathfinder: Could not find a route for pin group " << pinNum << ".\n";
+				std::cerr << ERRORL "Error: Pathfinder: Could not find a route for pin group " << pinNum << ".\n";
 			}
 			else
 			{
@@ -629,7 +629,7 @@ bool PathFinderWireRouter::traceBack(double pfac,WireRouteNode* sink,Path* sourc
 		next_node = findPrevious(current_node);
 		if (next_node == NULL)
 		{
-			std::cerr << ERROR "Error: Pathfinder: Trace back failed.\n";
+			std::cerr << ERRORL "Error: Pathfinder: Trace back failed.\n";
 			//TODO: clear claimedPins
 			return false;
 		}
@@ -680,7 +680,7 @@ WireRouteNode* PathFinderWireRouter::findPrevious(WireRouteNode* current_node)
 		return_node = current_node->spawn;
 	else
 	{
-		std::cerr << ERROR "Error: Pathfinder: No previous node can be found.\n";
+		std::cerr << ERRORL "Error: Pathfinder: No previous node can be found.\n";
 		return_node = NULL;
 	}
 	return return_node;
@@ -759,7 +759,7 @@ vector<WireRouteNode*> PathFinderWireRouter::fillGrid(int pin_number,double pfac
 		WireRouteNode* current_node = wavefront.top();
 		wavefront.pop();
 		if (!current_node)
-			std::cerr << ERROR "Error: Current node does not exist.\n";
+			std::cerr << ERRORL "Error: Current node does not exist.\n";
 
 		for (unsigned i = 0;i < current_node->neighbors.size();i++)
 		{
@@ -802,7 +802,7 @@ vector<WireRouteNode*> PathFinderWireRouter::fillGrid(int pin_number,double pfac
 			}
 		}
 	}
-	std::cerr << ERROR "Error: Pathfinder: Sink node could not be found. " << endl;
+	std::cerr << ERRORL "Error: Pathfinder: Sink node could not be found. " << endl;
 	// Clear the searched nodes since sink was not found
 	for (unsigned i = 0;i < searched_nodes.size();i++)
 	{

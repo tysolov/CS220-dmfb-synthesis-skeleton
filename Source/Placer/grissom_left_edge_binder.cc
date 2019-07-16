@@ -400,7 +400,7 @@ void GrissomLEBinder::place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule
     // Sanity check: All nodes should be bound by now
     {
         stringstream msg;
-        msg << "ERROR. All nodes were not bound during Left-Edge Bind (Global Fixed Placer)" << endl;
+        msg << "ERRORL. All nodes were not bound during Left-Edge Bind (Global Fixed Placer)" << endl;
         msg << "There is probably a problem with the schedule." << endl;
         msg << "Try increasing the number of resources and re-scheduling:" << endl;
         bool allBound = true;

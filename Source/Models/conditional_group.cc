@@ -73,7 +73,7 @@ void ConditionalGroup::addNewCondition(Expression *e, DAG *d, vector<TransferEdg
 {
 	{	// Sanity check: If e is NULL, definitely an ELSE...must be 1+ conditions already
 		stringstream msg;
-		msg << "ERROR. Cannot add an ELSE w/o at least one other condition" << ends;
+		msg << "ERRORL. Cannot add an ELSE w/o at least one other condition" << ends;
 		claim(!(!e && conditions->size() == 0), &msg);
 	}
 	Condition *c = new Condition();
@@ -106,7 +106,7 @@ void ConditionalGroup::swapConditions(int i1, int i2)
 {
 	{	// Sanity check: Must be within range
 		stringstream msg;
-		msg << "ERROR. Swap indeces not in range." << ends;
+		msg << "ERRORL. Swap indeces not in range." << ends;
 		claim(i1 >= 0 && i1 < conditions->size() && i2 >= 0 && i2 < conditions->size(), &msg);
 	}
 	conditions->at(i1)->order = i2;
@@ -120,7 +120,7 @@ void ConditionalGroup::deleteCondition(int i)
 {
 	{	// Sanity check: Must be within range
 		stringstream msg;
-		msg << "ERROR. Swap indeces not in range." << ends;
+		msg << "ERRORL. Swap indeces not in range." << ends;
 		claim(i >= 0 && i < conditions->size(), &msg);
 	}
 	conditions->erase(conditions->begin()+i);

@@ -314,7 +314,7 @@ void CFG::convertFTSplits()
 {
 	{	// Sanity check: Can only convert if a single DAG
 		stringstream msg;
-		msg << "ERROR. For now, we can only convert FTSplits if they're contained within a single independent DAG. " << endl;
+		msg << "ERRORL. For now, we can only convert FTSplits if they're contained within a single independent DAG. " << endl;
 		//for (int i = 0; i < cfgs->size(); i++)
 		claim(allDags.size() == 1, &msg);
 	}

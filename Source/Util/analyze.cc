@@ -50,7 +50,7 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 {
 	cout << "Analyzing schedule for errors...";
 
-	string failTag = ERROR "***FAIL - ";
+	string failTag = ERRORL "***FAIL - ";
 	stringstream rs(""); // return string
 
 
@@ -71,7 +71,7 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 	rs << "Number Other Nodes: " << dag->others.size() << endl << endl;
 
 	rs << "//////////////////////////////////////////////////////" << endl;
-	rs << "// ERROR SUMMARY" << endl;
+	rs << "// ERRORL SUMMARY" << endl;
 	rs << "//////////////////////////////////////////////////////" << endl;
 
 
@@ -90,7 +90,7 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 			stringstream ss;
 			ss << failTag << "A head (DISPENSE/TRANSFER_IN) node has a parent.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 		if (h->GetChildren().size() == 0)
 
@@ -98,7 +98,7 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 			stringstream ss;
 			ss << failTag << "A head (DISPENSE/TRANSFER_IN) node has no children.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 	}
 
@@ -115,14 +115,14 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 			stringstream ss;
 			ss << failTag << "A tail (OUTPUT/TRANSFER_OUT) node has a child." ;
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 		if (t->GetParents().size() == 0)
 		{
 			stringstream ss;
 			ss << failTag << "A tail (OUTPUT/TRANSFER_OUT) node has no parents.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 
 	}
@@ -138,14 +138,14 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 			stringstream ss;
 			ss << failTag << "A MIX node has " << m->GetParents().size() << " parents...should have " << m->numDrops << " parents.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 		if (m->GetChildren().size() != 1)
 		{
 			stringstream ss;
 			ss << failTag << "A MIX node has " << m->GetChildren().size() << " children...should have 1 child.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 	}
 
@@ -161,14 +161,14 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 			stringstream ss;
 			ss << failTag << "A DILUTE node has " << d->GetParents().size() << " parents...should have " << d->numDrops << " parents.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 		if (d->GetChildren().size() != (unsigned)d->numDrops)
 		{
 			stringstream ss;
 			ss << failTag << "A DILUTE node has " << d->GetChildren().size() << " children...should have " << d->numDrops << " children.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 	}
 
@@ -183,14 +183,14 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 			stringstream ss;
 			ss << failTag << "A SPLIT node has " << s->GetChildren().size() << " children...should have " << s->numDrops << " children.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 		if (s->GetParents().size() != 1)
 		{
 			stringstream ss;
 			ss << failTag << "A SPLIT node has " << s->GetParents().size() << " parents...should have 1 parent.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 	}
 
@@ -204,14 +204,14 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 			stringstream ss;
 			ss << failTag << "A General/FTSPlit node has " << o->GetChildren().size() << " children...should have 1 child.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 		if (o->GetParents().size() != 1)
 		{
 			stringstream ss;
 			ss << failTag << "A General/FTSplit node has " << o->GetParents().size() << " parents...should have 1 parent.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 	}
 
@@ -224,14 +224,14 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 			stringstream ss;
 			ss << failTag << "A heat node has " << h->GetChildren().size() << " children...should have 1 child.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 		if (h->GetParents().size() != 1)
 		{
 			stringstream ss;
 			ss << failTag << "A heat node has " << h->GetParents().size() << " parents...should have 1 parent.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 	}
 
@@ -244,14 +244,14 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 			stringstream ss;
 			ss << failTag << "A cool node has " << c->GetChildren().size() << " children...should have 1 child.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 		if (c->GetParents().size() != 1)
 		{
 			stringstream ss;
 			ss << failTag << "A cool node has " << c->GetParents().size() << " parents...should have 1 parent.";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 
 	}
@@ -265,14 +265,14 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 			stringstream ss;
 			ss << failTag << "A detect node has " << d->GetChildren().size() << " children...should have " << d->numDrops << " child(ren).";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 		if (d->GetParents().size() != (unsigned)d->numDrops)
 		{
 			stringstream ss;
 			ss << failTag << "A detect node has " << d->GetParents().size() << " parents...should have " << d->numDrops << " parent(s).";
 			rs << ss.str() << endl;
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 	}
 
@@ -282,7 +282,7 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 		stringstream ss;
 		ss << failTag << "#Dispenses - #Mixes + #Splits - #Outputs should = 0";
 		rs << ss.str() << endl;
-		cerr << endl << ERROR << ss.str();
+		cerr << endl << ERRORL << ss.str();
 	}
 
 
@@ -328,7 +328,7 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 						ss << failTag << "A node (" << n->GetName() << ") is bound to a resource type that is not available;";
 						ss << "Too many nodes bound to Resource Type " << n->boundedResType << " at TS " << j;
 						rs << ss.str() << endl;
-						cerr << endl << ERROR << ss.str();
+						cerr << endl << ERRORL << ss.str();
 						//break;
 					}
 				}
@@ -338,7 +338,7 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 				stringstream ss;
 				ss << failTag << "A node (" << n->GetName() << ") has no resource type associated with it.";
 				rs << ss.str() << endl;
-				cerr << endl << ERROR << ss.str();
+				cerr << endl << ERRORL << ss.str();
 			}
 		}
 	}
@@ -353,7 +353,7 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 				ss << failTag << "Attempting to store " <<  resHist.at(i)->dropsInStorage << " droplets in ";
 				ss << resHist.at(i)->availRes[SSD_RES] << " SSD modules at TS " << i << ".";
 				rs << ss.str() << endl;
-				cerr << endl << ERROR << ss.str();
+				cerr << endl << ERRORL << ss.str();
 			}
 		}
 	}
@@ -447,7 +447,7 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 				stringstream ss;
 				ss << failTag << "Cycle detected: Node " << n->order << " (" << n->name << ") points to higher/equal node, Node " << c->order << " (" << c->name << ")";
 				rs << ss.str() << endl;
-				cerr << endl << ERROR << ss.str();
+				cerr << endl << ERRORL << ss.str();
 			}
 
 			// Ensure that there is no gap in successive nodes
@@ -457,7 +457,7 @@ string Analyze::AnalyzeSchedule(DAG *dag, DmfbArch *arch, Scheduler *scheduler)
 				ss << failTag << "Parent node (" << n->name << ") ends at TS " << n->endTimeStep << ", but has a child node (" << c->name << ") ";
 				ss << "that begins at TS " << c->startTimeStep << ". Please ensure the schedule leaves no gaps in time.";
 				rs << ss.str() << endl;
-				cerr << endl << ERROR << ss.str();
+				cerr << endl << ERRORL << ss.str();
 			}
 		}
 	}
@@ -486,7 +486,7 @@ string Analyze::AnalyzePlacement(DmfbArch *arch, vector<ReconfigModule *> *rModu
 {
 	cout << "Analyzing placement for errors...";
 
-	string failTag = ERROR "***FAIL - ";
+	string failTag = ERRORL "***FAIL - ";
 	string warnTag = LOGGER "WARNING - ";
 	stringstream rs(""); // return string
 
@@ -523,7 +523,7 @@ string Analyze::AnalyzePlacement(DmfbArch *arch, vector<ReconfigModule *> *rModu
 			ss << "occurring from TS " << ra->getStartTS() << " - " << ra->getEndTS();
 			ss << " with TL, BR (x,y) coordinates of (" << ra->getLX() << "," << ra->getTY() << "), (" << ra->getRX() << "," << ra->getBY() << ")";
 			ss << " does not have a assay node bound to it.  All modules should have a node bound to them.";
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 			rs << ss.str();
 		}
 		else if (boundNode->status != BOUND) // All nodes should be marked as BOUND
@@ -533,7 +533,7 @@ string Analyze::AnalyzePlacement(DmfbArch *arch, vector<ReconfigModule *> *rModu
 			ss << "occurring from TS " << ra->getStartTS() << " - " << ra->getEndTS();
 			ss << " with TL, BR (x,y) coordinates of (" << ra->getLX() << "," << ra->getTY() << "), (" << ra->getRX() << "," << ra->getBY() << ")";
 			ss << " has a node that was not properly marked as bound.";
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 			rs << ss.str();
 		}
 		else if (boundNode->type == STORAGE_HOLDER && boundNode->storageOps.size() <= 0) // STORAGE_HOLDER nodes should have storage operations
@@ -543,7 +543,7 @@ string Analyze::AnalyzePlacement(DmfbArch *arch, vector<ReconfigModule *> *rModu
 			ss << "occurring from TS " << ra->getStartTS() << " - " << ra->getEndTS();
 			ss << " with TL, BR (x,y) coordinates of (" << ra->getLX() << "," << ra->getTY() << "), (" << ra->getRX() << "," << ra->getBY() << ")";
 			ss << " is bound to a STORAGE_HOLDER node with no storage operations bound to it; this is probably an error.";
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 			rs << ss.str();
 		}
 
@@ -570,7 +570,7 @@ string Analyze::AnalyzePlacement(DmfbArch *arch, vector<ReconfigModule *> *rModu
 			ss << " with TL, BR (x,y) coordinates of (" << ra->getLX() << "," << ra->getTY() << "), (" << ra->getRX() << "," << ra->getBY() << ")";
 			ss << " is bound to the node with name \"" << ra->getBoundNode()->name << "\", ";
 			ss << " however, this node as already been bound.";
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 			rs << ss.str();
 		}
 
@@ -609,7 +609,7 @@ string Analyze::AnalyzePlacement(DmfbArch *arch, vector<ReconfigModule *> *rModu
 							ss << " occurring from TS "  << raOld->getStartTS() << " - " << raOld->getEndTS();
 							ss << " with TL, BR (x,y) coordinates of (" << raOld->getLX() << "," << raOld->getTY() << "), (" << raOld->getRX() << "," << raOld->getBY() << ").";
 							ss << " Please check your placer for placement errors/bugs.";
-							cerr << endl << ERROR << ss.str();
+							cerr << endl << ERRORL << ss.str();
 							rs << ss.str();
 						}
 					}
@@ -635,7 +635,7 @@ string Analyze::AnalyzePlacement(DmfbArch *arch, vector<ReconfigModule *> *rModu
 							ss << " occurring from TS "  << raOld->getStartTS() << " - " << raOld->getEndTS();
 							ss << " with TL, BR (x,y) coordinates of (" << raOld->getLX() << "," << raOld->getTY() << "), (" << raOld->getRX() << "," << raOld->getBY() << ").";
 							ss << " Please check your placer for placement errors/bugs.";
-							cerr << endl << ERROR << ss.str();
+							cerr << endl << ERRORL << ss.str();
 							rs << ss.str();
 						}
 					}
@@ -650,7 +650,7 @@ string Analyze::AnalyzePlacement(DmfbArch *arch, vector<ReconfigModule *> *rModu
 					ss << "occurring from TS " << ra->getStartTS() << " - " << ra->getEndTS();
 					ss << " with TL, BR (x,y) coordinates of (" << ra->getLX() << "," << ra->getTY() << "), (" << ra->getRX() << "," << ra->getBY() << ")";
 					ss << " has a cell or IR cell that interferes with the I/O port at " << GetFormattedCell(x, y) << ", which may cause an unresolvable routing blockage.";
-					//cerr << endl << ERROR << ss.str();
+					//cerr << endl << ERRORL << ss.str();
 					rs << ss.str() << endl;
 				}
 			}
@@ -727,7 +727,7 @@ string Analyze::AnalyzeRoutes(DmfbArch *arch, map<Droplet *, vector<RoutePoint *
 				ss << failTag << "Droplet " << routesIt->first->getId() << " said to output at cell ";
 				ss << GetFormattedCell(lastRp) << ", but there is no adjacent output port.";
 				rs << ss.str();
-				cerr << endl << ERROR << ss.str();
+				cerr << endl << ERRORL << ss.str();
 			}
 		}
 		else if (lastRp->dStatus != DROP_MERGING && lastRp->dStatus != DROP_TRANSFER_OUT && lastRp->dStatus != DROP_TRANSFER_IN_MERGE) // ...and that rest are marked as merging or Transferring
@@ -738,7 +738,7 @@ string Analyze::AnalyzeRoutes(DmfbArch *arch, map<Droplet *, vector<RoutePoint *
 			ss << " is not properly terminated with a 'DROP_OUTPUT', 'DROP_MERGING', 'DROP_TRANSFER_OUT' or 'DROP_TRANSFER_IN_MERGE' status. ";
 			ss << "Please ensure the last RoutePoint is properly marked.";
 			rs << ss.str();
-			cerr << endl << ERROR << ss.str();
+			cerr << endl << ERRORL << ss.str();
 		}
 
 		// Get total cycles
@@ -783,7 +783,7 @@ string Analyze::AnalyzeRoutes(DmfbArch *arch, map<Droplet *, vector<RoutePoint *
 						ss << ". Previous routing point location: " << GetFormattedCell(rpLast) << " at cycle " << rpLast->cycle;
 					ss << ". Please ensure there are no NULL routing points in the final route.";
 					rs << ss.str();
-					cerr << endl << ERROR << ss.str();
+					cerr << endl << ERRORL << ss.str();
 				}
 				else if (rpLast)
 				{
@@ -796,7 +796,7 @@ string Analyze::AnalyzeRoutes(DmfbArch *arch, map<Droplet *, vector<RoutePoint *
 						ss << ", from " << GetFormattedCell(rpLast) << "-->" << GetFormattedCell(rp);
 						ss << ". Please ensure that droplets move one orthogonal cell, at most, each cycle.";
 						rs << ss.str();
-						cerr << endl << ERROR << ss.str();
+						cerr << endl << ERRORL << ss.str();
 					}
 
 					// 3.) There are no missing cycles in consecutive routing points
@@ -813,7 +813,7 @@ string Analyze::AnalyzeRoutes(DmfbArch *arch, map<Droplet *, vector<RoutePoint *
 						ss << ", when moving from " << GetFormattedCell(rpLast) << "-->" << GetFormattedCell(rp);
 						ss << ". Please ensure that consecutive routing points increment by one cycle.";
 						rs << ss.str();
-						cerr << endl << ERROR << ss.str();
+						cerr << endl << ERRORL << ss.str();
 					}
 				}
 			}
@@ -858,7 +858,7 @@ string Analyze::AnalyzeRoutes(DmfbArch *arch, map<Droplet *, vector<RoutePoint *
 							ss << " interferes with droplet " << lastRp.second << " at cycle " << lastRp.first->cycle << " at " << GetFormattedCell(lastRp.first);
 							ss << ". Please make sure routing and compaction are performed properly.";
 							rs << ss.str();
-							cerr << endl << ERROR << ss.str();
+							cerr << endl << ERRORL << ss.str();
 						}
 					}
 				}
@@ -879,7 +879,7 @@ string Analyze::AnalyzeRoutes(DmfbArch *arch, map<Droplet *, vector<RoutePoint *
 							ss << " interferes with droplet " << otherRp.second << " at cycle " << otherRp.first->cycle << " at " << GetFormattedCell(otherRp.first);
 							ss << ". Please make sure routing and compaction are performed properly.";
 							rs << ss.str();
-							cerr << endl << ERROR << ss.str();
+							cerr << endl << ERRORL << ss.str();
 						}
 					}
 				}
@@ -900,7 +900,7 @@ string Analyze::AnalyzeRoutes(DmfbArch *arch, map<Droplet *, vector<RoutePoint *
 							ss << " interferes with droplet " << nextRp.second << " at cycle " << nextRp.first->cycle << " at " << GetFormattedCell(nextRp.first);
 							ss << ". Please make sure routing and compaction are performed properly.";
 							rs << ss.str();
-							cerr << endl << ERROR << ss.str();
+							cerr << endl << ERRORL << ss.str();
 						}
 					}
 				}
@@ -1096,7 +1096,7 @@ string Analyze::AnalyzeDropletConcentrationAndIO(DAG *dag, DmfbArch *arch, map<D
 		ssErr << "//////////////////////////////////////////////////////" << endl;
 		ssErr << ssErrorDrops.str();
 		rs << ssErr.str();
-		//cerr << ERROR << ssErr.str() << endl; // Will let the route analyzer do the cerr for this info
+		//cerr << ERRORL << ssErr.str() << endl; // Will let the route analyzer do the cerr for this info
 	}
 
 
@@ -1116,7 +1116,7 @@ string Analyze::AnalyzeDropletConcentrationAndIO(DAG *dag, DmfbArch *arch, map<D
 		{
 			stringstream ss("");
 			ss <<"***FAIL - " << inVol << " units of " << name << " input but never output." << endl;
-			cerr << ERROR << ss.str() << endl;
+			cerr << ERRORL << ss.str() << endl;
 			rs << ss.str() << endl;
 		}
 		else
@@ -1131,7 +1131,7 @@ string Analyze::AnalyzeDropletConcentrationAndIO(DAG *dag, DmfbArch *arch, map<D
 			{
 				stringstream ss("");
 				ss <<"***FAIL - " << inVol << " units of " << name << " input but " << outVol << " units output." << endl;
-				cerr << ERROR << ss.str() << endl;
+				cerr << ERRORL << ss.str() << endl;
 				rs << ss.str() << endl;
 			}
 			outFluids.erase(outFluids.find(name));
@@ -1147,7 +1147,7 @@ string Analyze::AnalyzeDropletConcentrationAndIO(DAG *dag, DmfbArch *arch, map<D
 
 		stringstream ss("");
 		ss <<"***FAIL - " << outVol << " units of " << name << " output but never input." << endl;
-		cerr << ERROR << ss.str() << endl;
+		cerr << ERRORL << ss.str() << endl;
 		rs << ss.str() << endl;
 	}
 

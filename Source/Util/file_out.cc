@@ -288,7 +288,7 @@ void FileOut::RecursiveExpressionGen(Expression *e, stringstream *ss)
 			RecursiveExpressionGen(e->operands->front(), ss);
 		}
 		else
-			*ss << "---ERROR---" << ")" << endl;;
+			*ss << "---ERRORL---" << ")" << endl;;
 	}
 }
 

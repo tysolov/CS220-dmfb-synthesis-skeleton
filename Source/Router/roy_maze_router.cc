@@ -617,7 +617,7 @@ void RoyMazeRouter::computeIndivSupProbRoutes(vector<vector<RoutePoint *> *> *su
 									trace = board->at(trace->x-1)->at(trace->y);
 								else
 								{
-									cerr << ERROR "Bad Path" << endl;
+									cerr << ERRORL "Bad Path" << endl;
 									exit(1);
 								}
 							}
@@ -730,7 +730,7 @@ void RoyMazeRouter::computeIndivSupProbRoutes(vector<vector<RoutePoint *> *> *su
 												trace = board->at(trace->x-1)->at(trace->y);
 											else
 											{
-												cerr << ERROR "Bad Path" << endl;
+												cerr << ERRORL "Bad Path" << endl;
 												exit(1);
 											}
 										}

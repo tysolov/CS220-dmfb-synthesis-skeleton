@@ -61,7 +61,7 @@ Expression::Expression(AssayNode *s1, ExOperationType ot, AssayNode *s2)
 		if (!(ot == OP_GT || ot == OP_LT || ot == OP_GoE || ot == OP_LoE || ot == OP_EQUAL) || !s1 || !s2)
 		{
 			stringstream msg;
-			msg << "ERROR. >, <, <=, >=, == operations allowed for a sensor-sensor comparison. Must be valid sensors." << ends;
+			msg << "ERRORL. >, <, <=, >=, == operations allowed for a sensor-sensor comparison. Must be valid sensors." << ends;
 			claim(false, &msg);
 		}
 	}
@@ -84,7 +84,7 @@ Expression::Expression(AssayNode *s1, ExOperationType ot, double c)
 		if (!(ot == OP_GT || ot == OP_LT || ot == OP_GoE || ot == OP_LoE || ot == OP_EQUAL)	|| !s1)
 		{
 			stringstream msg;
-			msg << "ERROR. >, <, <=, >=, == operations allowed for a sensor-sensor comparison. Must be valid sensors." << ends;
+			msg << "ERRORL. >, <, <=, >=, == operations allowed for a sensor-sensor comparison. Must be valid sensors." << ends;
 			claim(false, &msg);
 		}
 	}
@@ -108,7 +108,7 @@ Expression::Expression(DAG *repeatableDag, ExOperationType ot, double runCount)
 		if (!(ot == OP_GT || ot == OP_LT || ot == OP_GoE || ot == OP_LoE || ot == OP_EQUAL)	|| !repeatableDag)
 		{
 			stringstream msg;
-			msg << "ERROR. >, <, <=, >=, == operations allowed for a sensor-sensor comparison. Must be valid assay/dag being checked for repetition." << ends;
+			msg << "ERRORL. >, <, <=, >=, == operations allowed for a sensor-sensor comparison. Must be valid assay/dag being checked for repetition." << ends;
 			claim(false, &msg);
 		}
 	}
@@ -145,7 +145,7 @@ Expression::Expression(ExOperationType andOr)
 {
 	{	// Sanity check: Must be proper operation type
 		stringstream msg;
-		msg << "ERROR. Only AND, OR operations allowed for this expression." << ends;
+		msg << "ERRORL. Only AND, OR operations allowed for this expression." << ends;
 		claim(andOr == OP_AND || andOr == OP_OR, &msg);
 	}
 	id = next_id++;
@@ -207,12 +207,12 @@ void Expression::addOperand(Expression *op)
 {
 	{	// Sanity check: Must be AND/OR to add operand
 		stringstream msg;
-		msg << "ERROR. Only AND, OR operations allowed to add more operands." << ends;
+		msg << "ERRORL. Only AND, OR operations allowed to add more operands." << ends;
 		claim(operationType == OP_AND || operationType == OP_OR, &msg);
 	}
 	{	// Sanity check: Expression must not be NULL
 		stringstream msg;
-		msg << "ERROR. Expression is not valid." << ends;
+		msg << "ERRORL. Expression is not valid." << ends;
 		claim(op, &msg);
 	}
 	operands->push_back(op);
@@ -353,7 +353,7 @@ bool Expression::recursiveEvaluate(Expression *e)
 {
 	{	// Sanity check: Expression must be valid
 		stringstream msg;
-		msg << "ERROR. Expression not valid." << ends;
+		msg << "ERRORL. Expression not valid." << ends;
 		claim(e->isValidExpression(), &msg);
 	}
 
@@ -371,14 +371,14 @@ bool Expression::recursiveEvaluate(Expression *e)
 			if (e->sensor1)
 			{
 				stringstream msg;
-				msg << "ERROR. Detect sensor " << e->sensor1->GetName() << " status must be 'complete'." << endl;
+				msg << "ERRORL. Detect sensor " << e->sensor1->GetName() << " status must be 'complete'." << endl;
 				claim(e->sensor1->GetStatus() == COMPLETE , &msg);
 			}
 
 			if (e->sensor2)
 			{
 				stringstream msg;
-				msg << "ERROR. Detect sensor " << e->sensor2->GetName() << " status must be 'complete'." << endl;
+				msg << "ERRORL. Detect sensor " << e->sensor2->GetName() << " status must be 'complete'." << endl;
 				claim(e->sensor2->GetStatus() == COMPLETE , &msg);
 			}
 		}
@@ -435,11 +435,11 @@ bool Expression::recursiveEvaluate(Expression *e)
 	else
 	{	// Sanity check: Detect nodes must be done
 		stringstream msg;
-		msg << "ERROR. Unknown operation type" << ends;
+		msg << "ERRORL. Unknown operation type" << ends;
 		claim(false , &msg);
 	}
     stringstream msg;
-    msg << "ERROR. Reached end of non-void function" << ends;
+    msg << "ERRORL. Reached end of non-void function" << ends;
     cout << msg.str() << endl;
     exit(-1);
 }

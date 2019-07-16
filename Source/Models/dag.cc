@@ -284,7 +284,7 @@ AssayNode * DAG::AddSplitNode(bool isFaultTolerant, int numDropsAfter, double se
 {
 	{	// Sanity check: Must split into at least 2 droplets
 		stringstream msg;
-		msg << "ERROR. SPLIT node splits into " << numDropsAfter << " drops. Must split into at least 2 drop." << ends;
+		msg << "ERRORL. SPLIT node splits into " << numDropsAfter << " drops. Must split into at least 2 drop." << ends;
 		claim(numDropsAfter >= 2, &msg);
 	}
 
@@ -636,7 +636,7 @@ void DAG::RemoveNodeFromDAG(AssayNode *node)
 
 	{	// Sanity check: Node must be in DAG
 		//stringstream msg;
-		//msg << "ERROR. Assay node " << node->GetName() << " cannot be removed because not found in dag " << GetPrintableName() << "." << endl;
+		//msg << "ERRORL. Assay node " << node->GetName() << " cannot be removed because not found in dag " << GetPrintableName() << "." << endl;
 		//claim(found, &msg);
 
 		// Instead of erring, if not found, just return b/c it has already been removed
@@ -681,7 +681,7 @@ void DAG::RemoveNodeFromDAG(AssayNode *node)
 
 	{	// Sanity check: Node must be in DAG
 		stringstream msg;
-		msg << "ERROR. Assay node " << node->GetName() << " cannot be removed because not found in individual list in dag " << GetPrintableName() << "." << endl;
+		msg << "ERRORL. Assay node " << node->GetName() << " cannot be removed because not found in individual list in dag " << GetPrintableName() << "." << endl;
 		claim(found, &msg);
 	}
 }

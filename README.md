@@ -12,7 +12,9 @@ This project has been verified to run appropriately on macOS >= 10.13, Ubuntu Li
 - `C++11` or later (if you use > `C++11` features, update the `CMakeLists.txt` file to require the later version to avoid warnings/errors)
 
 ## Getting started:
-1. Clone or fork this repo `$ git clone https://github.com/tlove004/CS220-dmfb-synthesis-skeleton.git`
+1. (Optional) fork this repo to create a GitHub-hosted clone of this repo under your username
+1. Clone this (or your forked) repo ```$ git clone https://github.com/tlove004/CS220-dmfb-synthesis-skeleton.git```
+(or ```$ git clone https://github.com/<your_github_username>/cs220-dmfb-synthesis-skeleton.git```)
 1. Edit the `CMakeLists.txt` file to set the path variable `YourPath` to the root of the project:
     - e.g. if you clone the directory to your home directory `~/`, you could set the variable `YourPath` to `~/CS220-dmfb-synthesis-skeleton/`
 
@@ -57,7 +59,7 @@ Although not necessary, as the files are parsed for you, understanding the input
     
 - a `.dag` file specifies the operations performed at the level of a basic block. 
   - the `DagName` property names the dag for the `.cfg` file to find it.
-  - there are number of `NODE` commands, each followed by any number of `EDGE` commands
+  - there are any number of `NODE` commands, each followed by any number of `EDGE` commands
     - a `NODE` specifies a fluidic operation to be performed.  Parameters include a node id, the type of operation, and operation-specific features such as time, volume, and/or name
     - an `EDGE` specifies a dependency between nodes. Specifically, the ege `EDGE(i, j)` requires that node i completes before node j can begin.  It also signifies that node j _consumes_ node i
     

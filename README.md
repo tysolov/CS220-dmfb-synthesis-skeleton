@@ -17,7 +17,7 @@ This project has been verified to run appropriately on macOS >= 10.13, Ubuntu Li
 (or ```$ git clone https://github.com/<your_github_username>/cs220-dmfb-synthesis-skeleton.git```)
 1. Edit the `CMakeLists.txt` file to set the path variable `YourPath` to the root of the project:
     - e.g. if you clone the directory to your home directory `~/`, you could set the variable `YourPath` to `~/CS220-dmfb-synthesis-skeleton/`
-    - alternatively, run: ```$ sed -i "4s|.*|set(YourPath \"$PWD/\")|" CMakeLists.txt``` at the root of the project.
+    - alternatively, run: ```$ sed -i -e "4s|.*|set(YourPath \"$PWD/\")|" CMakeLists.txt``` at the root of the project.
 
 1. Create a build directory and generate the Makefiles 
     ```$ mkdir build && cd build && cmake ..```

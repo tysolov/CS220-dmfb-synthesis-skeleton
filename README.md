@@ -4,12 +4,12 @@ open source MFSimStatic project.
 
 This version of the project compiles assays represented by a CFG and independent DAGs for each basic block, with TRANSFER_IN instructions representing SSA phi nodes, and TRANSFER_OUT instructions representing SSI sigma nodes.
 
-This project has been verified to run appropriately on macOS >= 10.13, Ubuntu Linux 14.04 LTS, and Windows 10 (using the Linux Subsystem).  It should work as is on any environment where cmake and GCC or Clang is available.
+This project has been verified to run appropriately on macOS >= 10.13, Ubuntu Linux 14.04 LTS and 18.04.3 LTS, and Windows 10 (using the Linux Subsystem).  It should work as is on any environment where cmake and GCC or Clang is available.
 
 ### Requirements:
 - `git`
 - `cmake` 2.8 or later
-- `C++11` or later (if you use > `C++11` features, update the `CMakeLists.txt` file to require the later version to avoid warnings/errors)
+- `Clang` or `GCC/G++` with support for `C++11` or later (if you use > `C++11` features, update the `CMakeLists.txt` file to require the later version to avoid warnings/errors)
 
 ## Getting started:
 1. (Optional) fork this repo to create a GitHub-hosted clone of this repo under your username
@@ -17,6 +17,7 @@ This project has been verified to run appropriately on macOS >= 10.13, Ubuntu Li
 (or ```$ git clone https://github.com/<your_github_username>/cs220-dmfb-synthesis-skeleton.git```)
 1. Edit the `CMakeLists.txt` file to set the path variable `YourPath` to the root of the project:
     - e.g. if you clone the directory to your home directory `~/`, you could set the variable `YourPath` to `~/CS220-dmfb-synthesis-skeleton/`
+    - alternatively, run: ```$ sed -i "4s|.*|set(YourPath \"$PWD/\")|" CMakeLists.txt``` at the root of the project.
 
 1. Create a build directory and generate the Makefiles 
     ```$ mkdir build && cd build && cmake ..```

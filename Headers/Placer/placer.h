@@ -30,7 +30,6 @@
 #include "claim.h"
 #include <unordered_set>
 #include <unordered_map>
-#include "operation_coalescing_pool.h"
 #include "structs.h"
 #include "dag.h"
 #include "pin_mapper.h"
@@ -45,7 +44,7 @@ class Placer
 		virtual ~Placer();
 
 		// Methods
-		virtual void place(DmfbArch *arch, DAG *dag, vector<ReconfigModule *> *rModules, CoalescingPool *coalescedNodes = nullptr);
+		virtual void place(DmfbArch *arch, DAG *dag, vector<ReconfigModule *> *rModules);
 
 		// Getters/Setters
 		int getMaxStoragePerModule() { return maxStoragePerModule; } // Not sure what class this info should really belong to, will hard-code for now

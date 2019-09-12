@@ -65,7 +65,7 @@ class Synthesis
 		Synthesis(SchedulerType st, PlacerType pt, RouterType rt, bool performWash, ResourceAllocationType rat, PinMapType pmt, WireRouteType wrt, CompactionType ct, ProcessEngineType pet, ExecutionType et, DAG *assay, DmfbArch *dmfbArch);
 		virtual ~Synthesis();
 
-		static Synthesis *CreateNewSynthesisEngine(string archFile, SchedulerType st, PlacerType pt, RouterType rt, bool performWash, ResourceAllocationType rat, PinMapType pmt, WireRouteType wrt, CompactionType ct, ProcessEngineType pet, ExecutionType et, int maxStorageDropsPerMod, int cellsBetweenModIR, int numHorizTracks, int numVertTracks, bool coalesce, bool vms);
+		static Synthesis *CreateNewSynthesisEngine(string archFile, SchedulerType st, PlacerType pt, RouterType rt, bool performWash, ResourceAllocationType rat, PinMapType pmt, WireRouteType wrt, CompactionType ct, ProcessEngineType pet, ExecutionType et, int maxStorageDropsPerMod, int cellsBetweenModIR, int numHorizTracks, int numVertTracks);
 
 		// Getters/Setters
 		Scheduler *getScheduler() { return scheduler; }

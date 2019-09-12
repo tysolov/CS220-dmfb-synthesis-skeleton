@@ -197,6 +197,7 @@ struct WireRouteTile {
 		}
 	}
 };
+
 /* CODE REPRESENTS THE MODEL WHERE THE PERIPHERAL EDGES HAVE CAPACITY (NOT SURE
  * THIS IS CORRECT AS IT DOESN'T SAY THIS IN THE PAPER.
  */
@@ -242,9 +243,6 @@ struct WireRouteTile {
 	}
 };
 */
-
-
-
 
 /////////////////////////////////////////////////////////////////
 // KamerLlNode: Node for the Kamer Linked-List Implementation
@@ -347,6 +345,7 @@ struct SoukupCell {
 	int val;
 	LeeCell* trace;
 };*/
+
 /////////////////////////////////////////////////////////////////
 // RoutePoint: Holds the basic information for a point in a
 // droplet's route

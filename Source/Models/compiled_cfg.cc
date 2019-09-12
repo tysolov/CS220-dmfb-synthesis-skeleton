@@ -618,6 +618,10 @@ void CompiledCFG::outputSimulationFiles()
     cout << "Outputting activation coordinates..." << std::flush;
     FileOut::WriteDmfbProgramToFile(routes, "Output/3_ELEC_ACTIVATIONS_COORDS.mfprog");
 
+    cout << "Outputting hardward description..." << std::flush;
+	FileOut::WriteHardwareFileWithWireRoutes(arch, "Output/4_HARDWARE_DESCRIPTION.txt", true);
+
+
 	cout << "Done.\nOutputting routes..." << std::flush;
 	FileOut::WriteRoutedDagAndArchToFile(NULL, arch, synthesisEngine->getRouter(), rModules, routes, dirtyCells, pinActivations, tsBeginningCycle, "Output/3_ROUTE_to_SIM.txt");
 

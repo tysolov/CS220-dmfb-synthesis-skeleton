@@ -72,7 +72,7 @@ int main(int argc, char **argv)
 	string name = "PCR";
 	string path = "Assays/CFGs/" + name + "/";
 	Synthesis *synthesisEngine = Synthesis::CreateNewSynthesisEngine("Assays/CFGs/" + name + "/ArchFile/arch.txt",
-			st, pt, rt, false, GRISSOM_FIX_0_RA, INDIVADDR_PM, PATH_FINDER_WR, BEG_COMP, pet, ALL_EX, 1, 1, 3, 3, false, false);
+			st, pt, rt, false, GRISSOM_FIX_0_RA, INDIVADDR_PM, PATH_FINDER_WR, BEG_COMP, pet, ALL_EX, 1, 1, 3, 3);
 
 	/// Files will be written to the "Output" directory, do not delete this directory.
 	DIR *theFolder = opendir("Output");

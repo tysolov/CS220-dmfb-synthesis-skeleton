@@ -174,9 +174,7 @@ public:
 		friend class LeeRouter;
 		friend class CS220Router;
 
-		friend class Test;
 		friend class CFG;
 		friend class CompiledCFG;
-		friend class CoalescingPool;
 };
 #endif

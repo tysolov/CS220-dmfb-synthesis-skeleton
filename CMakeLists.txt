@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(CS220Synth)
 
-set(YourPath "~/CS220-dmfb-synthesis-skeleton/")
+set(YourPath "~/Documents/GitHub/CS220-dmfb-synthesis-skeleton/")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
@@ -31,10 +31,7 @@ set(CS220Synth_SOURCES
         Source/Models/expression.cc
         Source/Models/fixed_module.cc
         Source/Models/io_port.cc
-        Source/Models/min_cost_max_flow_graph.cc
-        Source/Models/op_module.cc
         Source/Models/reconfig_module.cc
-        Source/Models/operation_coalescing_pool.cc
         Source/PinMapper/indiv_addr_pin_mapper.cc
         Source/PinMapper/pin_mapper.cc
         Source/Placer/cs220_placer.cc
@@ -56,13 +53,13 @@ set(CS220Synth_SOURCES
         Source/Util/file_in.cc
         Source/Util/file_out.cc
         Source/Util/sort.cc
+        Source/Util/synthesis.cc
         Source/Util/util.cc
         Source/WireRouter/path_finder_wire_router.cc
         Source/WireRouter/paths.cc
         Source/WireRouter/wire_router.cc
         Source/WireRouter/wire_segment.cc
-        Source/main.cc
-        Source/synthesis.cc)
+        Source/main.cc)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${YourPath})
 

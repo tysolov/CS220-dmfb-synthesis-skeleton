@@ -30,7 +30,6 @@
 #define PATH_FINDER_WIRE_ROUTER_H_
 
 #include "diagonal_wire_routing_model.h"
-#include "min_cost_max_flow_graph.h"
 #include "sort.h"
 #include "wire_router.h"
 #include "paths.h"

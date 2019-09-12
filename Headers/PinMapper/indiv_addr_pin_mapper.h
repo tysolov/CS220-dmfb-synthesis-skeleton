@@ -52,7 +52,6 @@ class IndivAddrPinMapper : public PinMapper
 		// Methods
 		int computeAvailResources();
 		int computeAvailResourcesForGrissomFixedPlacer(int horizRouteSpacing);
-		int computeAvailResourcesForGrissomFixedPlacer2();
 
 		// Members
 		DmfbArch *arch;

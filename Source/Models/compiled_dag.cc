@@ -136,7 +136,7 @@ void CompiledDAG::scheduleDAG()
 /////////////////////////////////////////////////////////////////////////////////
 // This method places/binds the DAG given the specified placer/binder
 /////////////////////////////////////////////////////////////////////////////////
-void CompiledDAG::placeDAG(CoalescingPool *coalescedNodes)
+void CompiledDAG::placeDAG()
 {
 	cout << "Placing DAG: " << uncompiledDAG->GetPrintableName() << endl;
 	///////////////////////////////////////////////////////
@@ -145,7 +145,7 @@ void CompiledDAG::placeDAG(CoalescingPool *coalescedNodes)
 	Placer *placer = synthesisEngine->getPlacer();
 	DmfbArch *arch = synthesisEngine->getArch();
 	CompatChk::PrePlaceChk(placer, arch, true);
-	placer->place(arch, uncompiledDAG, rModules, coalescedNodes);
+	placer->place(arch, uncompiledDAG, rModules);
 	FileOut::WritePlacedDagAndArchToFile(uncompiledDAG, arch, placer, rModules, "Output/2_PLACE_to_ROUTE_" + getPrintableName() + ".txt");
 	Analyze::AnalyzePlacement(arch, rModules);
 	cout << "Outputting placed graph..." << endl << endl; uncompiledDAG->OutputGraphFile("PLACE_COMPILED_" + getPrintableName(), true, true);

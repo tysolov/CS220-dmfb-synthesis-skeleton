@@ -25,7 +25,7 @@ CS220Placer::~CS220Placer()
 //  Look at grissom_left_edge_binder.cc for inspiration
 //
 ///////////////////////////////////////////////////////////////////////////////////
-void CS220Placer::place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule *> *rModules, CoalescingPool *coalescedNodes)
+void CS220Placer::place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule *> *rModules)
 {
 
 }

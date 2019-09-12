@@ -64,7 +64,7 @@ Placer::~Placer()
 ///////////////////////////////////////////////////////////////////////////////////
 // Generic function called to do placement.
 ///////////////////////////////////////////////////////////////////////////////////
-void Placer::place(DmfbArch *arch, DAG *dag, vector<ReconfigModule *> *rModules, CoalescingPool *coalescedNodes)
+void Placer::place(DmfbArch *arch, DAG *dag, vector<ReconfigModule *> *rModules)
 {
     claim(false, "No valid placer was selected for the synthesis process or no method for 'place()' was implemented for the selected placer.\n");
 }

@@ -28,7 +28,6 @@
 #include "synthesis.h"
 #include <unordered_set>
 #include <unordered_map>
-#include "operation_coalescing_pool.h"
 #include "conditional_group.h"
 
 class CompiledDAG
@@ -49,7 +48,7 @@ class CompiledDAG
 		// Methods
 		void compileDAG();
 		void scheduleDAG();
-		void placeDAG(CoalescingPool* = nullptr);
+		void placeDAG();
 		void routeDAG();
 		void generateRoutingDAGs(vector<ConditionalGroup *> conditionalGroups, map<DAG *, CompiledDAG *> *uncompToCompDAG, map<Condition *, vector<CompiledDAG *> *> *conditionToRoutingDAGs);
 		void initTransferLocations(map<DAG *, CompiledDAG *> *uncompToCompDAG);

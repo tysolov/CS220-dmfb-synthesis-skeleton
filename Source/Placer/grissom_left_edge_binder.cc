@@ -49,7 +49,7 @@ GrissomLEBinder::~GrissomLEBinder()
 // are essentially fixed each time-cycle. Thus, the placer is really just binding
 // scheduled operations to available work areas.
 ///////////////////////////////////////////////////////////////////////////////////
-void GrissomLEBinder::place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule *> *rModules, CoalescingPool *coalescedNodes)
+void GrissomLEBinder::place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule *> *rModules)
 {
     /////////////////////////////////////////////////////////////
     // Delete old Storage Holder Nodes if any exist - are
@@ -146,55 +146,6 @@ void GrissomLEBinder::place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule
                     AssayNode *n = *it;
                     if (n->status == BOUND) continue;
                     if (k || n->GetStartTS() >= lastEnd) {
-                        /* NEW FOR GLOBAL COALESCING */
-                        if (coalescedNodes) {
-                            Pool *p = coalescedNodes->getPool(n);
-                            if (p->status == BOUND)
-                                fm = p->module;
-                            else {
-                                if (p->resourceType != rt && p->resourceType != BASIC_RES)
-                                    continue;
-                                // verify that this module is not already used by another interfering coalesced pool
-                                bool used = false;
-                                for (auto *pool : *coalescedNodes->getPoolsByType(p->resourceType)) {
-                                    if (pool != p && pool->status == BOUND) // different pool already bound
-                                    {
-                                        if (pool->module == fm)
-                                        {
-                                            for (AssayNode *free : pool->pool) {
-                                                if (p->free) {
-                                                    AssayNode *an = *p->pool.begin();
-                                                    if (free->GetDAG() == an->GetDAG() && (
-                                                            (an->GetStartTS() <= free->GetStartTS() &&
-                                                             an->GetEndTS() > free->GetStartTS())   //overlaps start
-                                                            || (an->GetStartTS() < free->GetEndTS() &&
-                                                                an->GetEndTS() >= free->GetEndTS())       //overlaps end
-                                                    ))
-                                                        used = true;
-                                                } else {
-                                                    for (AssayNode *an : p->pool) // for every pair of nodes, if they are in common dags, do they interfere?
-                                                    {
-                                                        if (free->GetDAG() == an->GetDAG() && (
-                                                                (an->GetStartTS() <= free->GetStartTS() &&
-                                                                 an->GetEndTS() > free->GetStartTS())   //overlaps start
-                                                                || (an->GetStartTS() < free->GetEndTS() &&
-                                                                    an->GetEndTS() >=
-                                                                    free->GetEndTS())       //overlaps end
-                                                        ))
-                                                            used = true;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                if (used)
-                                    continue;
-                                p->module = fm;
-                                p->status = BOUND;
-                            }
-                        }
-                        /* END OF NEW FOR GLOBAL COALESCING */
                         sched->push_back(n);
                         scheduled.push_back(n);
                         lastEnd = n->GetEndTS();
@@ -250,18 +201,6 @@ void GrissomLEBinder::place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule
                         if (numDropsStoredAtTS == maxStoragePerModule)
                         {
                             AssayNode *sh = schedDag->AddStorageHolderNode();
-                            /* NEW FOR GLOBAL COALESCING */
-                            if (coalescedNodes)
-                            {
-                                Pool *p = coalescedNodes->getPool(sn);
-                                if (p->status == BOUND)
-                                    fm = p->module;
-                                else {
-                                    p->module = fm;
-                                    p->status = BOUND;
-                                }
-                            }
-                            /* END OF NEW FOR GLOBAL COALESCING */
                             sh->status = BOUND;
                             sh->boundedResType = fm->getResourceType();
                             sh->reconfigMod = new ReconfigModule(fm->getResourceType(), fm->getLX(), fm->getTY(), fm->getRX(), fm->getBY());

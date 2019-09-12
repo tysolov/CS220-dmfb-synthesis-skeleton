@@ -317,10 +317,10 @@ void RoyMazeRouter::computeIndivSupProbRoutes(vector<vector<RoutePoint *> *> *su
 						rp->y = t->y;
 						(*routes)[pd]->push_back(rp);
                         //////////DEBUG
-                        if (rp->cycle == 5061) {
-                            cout << "BREAK!" << endl;
-                            cout << rp->y << endl;
-                        }
+//                        if (rp->cycle == 5061) {
+//                            cout << "BREAK!" << endl;
+//                            cout << rp->y << endl;
+//                        }
 
 						par->SetTransferRef(rp);
 						s = t; // Don't need to route, already there
@@ -335,10 +335,10 @@ void RoyMazeRouter::computeIndivSupProbRoutes(vector<vector<RoutePoint *> *> *su
 						(*routes)[pd]->push_back(rp);
 
                         //////////DEBUG
-                        if (rp->cycle == 5061) {
-                            cout << "BREAK!" << endl;
-                            cout << rp->y << endl;
-                        }
+//                        if (rp->cycle == 5061) {
+//                            cout << "BREAK!" << endl;
+//                            cout << rp->y << endl;
+//                        }
 
 						routingDag = true;
 						s = board->at(par->GetTransferRef()->x)->at(par->GetTransferRef()->y);
@@ -429,10 +429,10 @@ void RoyMazeRouter::computeIndivSupProbRoutes(vector<vector<RoutePoint *> *> *su
 				rp->y = s->y;
 				sr->push_back(rp);
                 //////////DEBUG
-                if (rp->cycle == 5061) {
-                    cout << "BREAK!" << endl;
-                    cout << rp->y << endl;
-                }
+//                if (rp->cycle == 5061) {
+//                    cout << "BREAK!" << endl;
+//                    cout << rp->y << endl;
+//                }
 			}
 			else if (routingDag)
 			{
@@ -632,10 +632,10 @@ void RoyMazeRouter::computeIndivSupProbRoutes(vector<vector<RoutePoint *> *> *su
 								sr->push_back(rp);
 								tracePath.pop_back();
                                 //////////DEBUG
-                                if (rp->cycle == 5061) {
-                                    cout << "BREAK!" << endl;
-                                    cout << rp->y << endl;
-                                }
+//                                if (rp->cycle == 5061) {
+//                                    cout << "BREAK!" << endl;
+//                                    cout << rp->y << endl;
+//                                }
 							}
 							goto3 = true;
 							routeFound = true;
@@ -745,10 +745,10 @@ void RoyMazeRouter::computeIndivSupProbRoutes(vector<vector<RoutePoint *> *> *su
 											sr->push_back(rp);
 											tracePath.pop_back();
 											//////////DEBUG
-											if (rp->cycle == 5061) {
-											    cout << "BREAK!" << endl;
-											    cout << rp->y << endl;
-											}
+//											if (rp->cycle == 5061) {
+//											    cout << "BREAK!" << endl;
+//											    cout << rp->y << endl;
+//											}
 										}
 										goto6 = false;
 										goto3 = true;

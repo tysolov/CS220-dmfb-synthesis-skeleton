@@ -399,7 +399,7 @@ void Synthesis::synthesizeDesign()
 // This creates a new synthesis-engine, which essentially acts as a holder of synthesis
 // settings and types for an external system to perform partial synthesis.
 ///////////////////////////////////////////////////////////////////////////////////////
-Synthesis * Synthesis::CreateNewSynthesisEngine(string archFile, SchedulerType st, PlacerType pt, RouterType rt, bool performWash, ResourceAllocationType rat, PinMapType pmt, WireRouteType wrt, CompactionType ct, ProcessEngineType pet, ExecutionType et, int maxStorageDropsPerMod, int cellsBetweenModIR, int numHorizTracks, int numVertTracks, bool coalesce, bool vms)
+Synthesis * Synthesis::CreateNewSynthesisEngine(string archFile, SchedulerType st, PlacerType pt, RouterType rt, bool performWash, ResourceAllocationType rat, PinMapType pmt, WireRouteType wrt, CompactionType ct, ProcessEngineType pet, ExecutionType et, int maxStorageDropsPerMod, int cellsBetweenModIR, int numHorizTracks, int numVertTracks)
 {
 	// Read Architectural Description File
 	DmfbArch * arch = FileIn::ReadDmfbArchFromFile(archFile);

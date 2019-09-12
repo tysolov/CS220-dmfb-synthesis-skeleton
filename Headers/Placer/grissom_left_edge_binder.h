@@ -32,7 +32,6 @@
 #include "enums.h"
 #include "placer.h"
 #include <vector>
-#include "operation_coalescing_pool.h"
 
 class FixedModule;
 
@@ -47,6 +46,6 @@ class GrissomLEBinder : public Placer
 		virtual ~GrissomLEBinder();
 
 		// Methods
-		void place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule *> *rModules, CoalescingPool* cp = nullptr);
+		void place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule *> *rModules);
 };
 #endif /* GRISSOM_LEFT_EDGE_BINDER_H_ */

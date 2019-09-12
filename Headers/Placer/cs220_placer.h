@@ -17,6 +17,6 @@ public:
     virtual ~CS220Placer();
 
     // Methods
-    void place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule *> *rModules, CoalescingPool* cp = nullptr);
+    void place(DmfbArch *arch, DAG *schedDag, vector<ReconfigModule *> *rModules);
 };
 #endif /* _CS220_PLACER_ */

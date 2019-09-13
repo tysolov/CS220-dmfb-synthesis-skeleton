@@ -13,17 +13,28 @@ This project has been verified to run appropriately on macOS >= 10.13, Ubuntu Li
 
 ## Getting started:
 1. (Optional) fork this repo to create a GitHub-hosted clone of this repo under your username
-1. Clone this (or your forked) repo ```$ git clone https://github.com/tlove004/CS220-dmfb-synthesis-skeleton.git```
-(or ```$ git clone https://github.com/<your_github_username>/cs220-dmfb-synthesis-skeleton.git```)
+1. Clone this (or your forked) repo 
+```bash
+$ git clone https://github.com/tlove004/CS220-dmfb-synthesis-skeleton.git
+```
+  (or) 
+```bash
+$ git clone https://github.com/<your_github_username>/cs220-dmfb-synthesis-skeleton.git
+```
 1. Edit the `CMakeLists.txt` file to set the path variable `YourPath` to the root of the project:
-    - e.g. if you clone the directory to your home directory `~/`, you could set the variable `YourPath` to `~/CS220-dmfb-synthesis-skeleton/`
-    - alternatively, run: ```$ sed -i.bu "4s|.*|set(YourPath \"$PWD/\")|" CMakeLists.txt && rm CMakeLists.txt.bu``` at the root of the project
-
+   ```bash
+   $ sed -i.bu "4s|.*|set(YourPath \"$PWD/\")|" CMakeLists.txt && rm CMakeLists.txt.bu
+   ```
 1. Create a build directory and generate the Makefiles 
-    ```$ mkdir build && cd build && cmake ..```
-1. Build the project `$ make`
+    ```bash
+    $ mkdir build && cd build && cmake ..
+    ```
+1. Build the project from the build directory 
+   ```bash
+   $ make
+   ```
 
-You should now have an executable source file `CS220Synth` that should synthesize the default experiment (PCR) with the default synthesis algorithms.
+You should now have an executable source file `CS220Synth` at the root of the project directory that will synthesize the default experiment (PCR) with the default synthesis algorithms.
 
 A basic scheduler `list_scheduler`, placer `grissom_left_edge_binder`, and router `roy_maze_router` have been included 
 for reference on API usage.  Reported results (in your final submission) should compare against the given synthesis algorithms.

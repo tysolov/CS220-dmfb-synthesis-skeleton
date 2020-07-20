@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(CS220Synth)
 
+# set your path between the quotes
 set(YourPath "~/Documents/GitHub/CS220-dmfb-synthesis-skeleton/")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -64,3 +65,9 @@ set(CS220Synth_SOURCES
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${YourPath})
 
 add_executable(CS220Synth ${CS220Synth_SOURCES})
+
+if (WIN32)
+    # link Winmm library (for timing) -- if not found,
+    #   then you're likely missing windows SDK libraries and need to install them
+    target_link_libraries(CS220Synth Winmm.lib)
+endif (WIN32)

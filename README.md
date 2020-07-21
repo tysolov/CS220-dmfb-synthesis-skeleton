@@ -39,6 +39,12 @@ You should now have an executable source file `CS220Synth` at the root of the pr
 A basic scheduler `list_scheduler`, placer `grissom_left_edge_binder`, and router `roy_maze_router` have been included 
 for reference on API usage.  Reported results (in your final submission) should compare against the given synthesis algorithms.
 
+
+After running `CS220Synth`, the output simulation files can be used to create a video simulation of the assay.
+The visualizer `2DmfbSimVisualizer.jar` can produce videos of the simulated execution by selecting `Cyclic Simulation` or `Cyclic Routes` in the GUI.  For *nix systems, after generating a simulation, you'll see an error regarding `Mencoder` -- you can use `generate_video.command` to generate a video from the files produced by the visualizer.  Windows users can download `mencoder.exe` (see below) and save it to a `Shared` directory that is one directory up the tree from the root of this project.
+
+`mencoder.exe` (for Windows users) can be downloaded from here: https://github.com/UCRMicrofluidics/MFSimStatic/blob/master/Shared/mencoder.exe
+
 ## Troubleshooting tips:
 - Use an IDE!  This is a large project, with a lot of dependencies, and the ability to quickly visualize the structure in an IDE will make your life a lot easier.  CLion (https://www.jetbrains.com/clion/) is my recommendation, and is free for all students with a ucr.edu email account.  Also, the built in visual debugger is fantastic.
 - If you are having issues with source files not showing up during your build, do not forget that you must add these sources to `CMakeLists.txt`.  Header files must be discoverable via the `include_directories` command, and source files should be set in the `set(CS220Synth_SOURCES ....)` section.

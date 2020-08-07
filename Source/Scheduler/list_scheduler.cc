@@ -389,10 +389,17 @@ unsigned long long ListScheduler::schedule(DmfbArch *arch, DAG *dag)
         AssayNode *tOut = dag->tails.at(i);
         if (tOut->GetType() == TRANSFER_OUT)
         {
-            AssayNode *tIn = tOut->GetParents().front();\
-            tOut->startTimeStep = tOut->endTimeStep = schedTS-1;
-            tOut->status = SCHEDULED;
-
+            AssayNode *tIn = tOut->GetParents().front();
+            if (tIn->GetType() == TRANSFER_IN)
+            {
+                tOut->startTimeStep = tOut->endTimeStep = schedTS;
+                tOut->status = SCHEDULED;
+            }
+            else
+            {
+                tOut->startTimeStep = tOut->endTimeStep = schedTS - 1;
+                tOut->status = SCHEDULED;
+            }
             if (tIn->endTimeStep < tOut->startTimeStep)
             {
                 AssayNode *store = dag->AddStorageNode();
